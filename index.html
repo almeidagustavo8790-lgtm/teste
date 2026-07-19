@@ -1,243 +1,523 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dia dos Pais | O Presente Perfeito</title>
-    <style>
-        :root {
-            --primary-color: #1a2f4c;
-            --secondary-color: #d4af37;
-            --text-color: #333333;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-            --price-color: #27ae60;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            color: var(--text-color);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--white);
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .logo span {
-            color: var(--secondary-color);
-        }
-        .hero {
-            background: linear-gradient(rgba(26, 47, 76, 0.9), rgba(26, 47, 76, 0.9));
-            height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 20px;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-        .btn-cta {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 15px 35px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            display: inline-block;
-        }
-        
-        .tools-section {
-            padding: 60px 20px;
-            background-color: var(--white);
-            text-align: center;
-        }
-        .section-title {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .tool-card {
-            background-color: var(--white);
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .tool-image-placeholder {
-            width: 100%;
-            height: 200px;
-            background-color: #f1f3f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 5rem;
-        }
-        .tool-info {
-            padding: 25px;
-            text-align: left;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .tool-info h3 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .tool-info p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        .price-container {
-            margin-bottom: 20px;
-        }
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 0.9rem;
-        }
-        .new-price {
-            color: var(--price-color);
-            font-size: 1.6rem;
-            font-weight: bold;
-        }
-        .btn-buy {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: block;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Pai · Presentes IA</title>
+  <!-- Font & ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .about {
-            padding: 60px 20px;
-            background-color: var(--light-bg);
-            text-align: center;
-        }
-        .about-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .about h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-        }
-    </style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f6f9fc;
+      color: #1a2634;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* cabeçalho com toque IA */
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 20, 40, 0.03);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1.2rem 0.4rem 0.8rem;
+      border-radius: 100px;
+      border: 1px solid rgba(0, 30, 60, 0.06);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1f3a57;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .ai-badge i {
+      color: #2b6c8f;
+      font-size: 1rem;
+    }
+
+    .ai-badge span {
+      background: #d4e2f0;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #0a2538;
+      margin-left: 0.2rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      padding-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #0b2a41 0%, #1b4a6b 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #2c445b;
+      max-width: 480px;
+      margin-top: 0.5rem;
+      font-weight: 400;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(2px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .hero .cta-ai {
+      background: #0b2f47;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: 0 10px 20px -8px rgba(10, 40, 70, 0.25);
+      transition: all 0.2s;
+      cursor: default;
+      margin-top: 1rem;
+    }
+
+    .hero .cta-ai i {
+      font-size: 1.1rem;
+    }
+
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+      margin: 3.5rem 0 3rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 40px;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 12px 30px -10px rgba(0, 20, 40, 0.08), 0 0 0 1px rgba(255,255,255,0.7);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      border: 1px solid rgba(255,255,255,0.5);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 40px -14px rgba(0, 30, 60, 0.15);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .card .icone {
+      font-size: 2.4rem;
+      color: #1b4a6b;
+      background: #e1ecf5;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      margin-bottom: 1.2rem;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.02);
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b2a41;
+      margin-bottom: 0.25rem;
+    }
+
+    .card .subtipo {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #3e617c;
+      background: rgba(30, 70, 100, 0.05);
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .card .tamanhos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.5rem;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .card .tamanhos span {
+      background: white;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1f3f59;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .card .personalizacao {
+      background: #eef5fa;
+      border-radius: 60px;
+      padding: 0.6rem 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #0b2a41;
+      margin: 0.6rem 0 1.2rem;
+      border: 1px solid rgba(255,255,255,0.4);
+      width: fit-content;
+    }
+
+    .card .personalizacao i {
+      color: #0066a0;
+    }
+
+    .preco {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #0a2538;
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .preco small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #466b86;
+    }
+
+    .btn-personalizar {
+      background: #0b2f47;
+      border: none;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: 0.15s;
+      box-shadow: 0 6px 12px -6px rgba(10, 40, 70, 0.2);
+      cursor: default;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn-personalizar i {
+      font-size: 0.9rem;
+    }
+
+    .card-feature {
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(6px);
+      border-radius: 60px;
+      padding: 0.4rem 1.2rem 0.4rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.8);
+      color: #1a3d57;
+      margin-bottom: 1rem;
+    }
+
+    .card-feature i {
+      color: #006699;
+    }
+
+    .selo-ia {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: rgba(0, 40, 70, 0.03);
+      backdrop-filter: blur(2px);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: #1e4b6b;
+      border: 1px solid rgba(255,255,255,0.6);
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .selo-ia i {
+      font-size: 0.6rem;
+    }
+
+    .destaque-ia {
+      background: linear-gradient(145deg, #ffffff, #f2f9ff);
+      border-radius: 60px;
+      padding: 0.3rem 1.8rem 0.3rem 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      border: 1px solid rgba(0,60,120,0.06);
+    }
+
+    .footer-ai {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #3d5b73;
+      border-top: 1px solid rgba(0,0,0,0.02);
+      padding-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-ai i {
+      color: #1b4f70;
+      margin: 0 4px;
+    }
+
+    .badge-ia {
+      background: #0d2840;
+      color: white;
+      padding: 0.2rem 1.2rem;
+      border-radius: 80px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 650px) {
+      body { padding: 1.2rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .card { padding: 1.5rem; }
+    }
+
+    /* simular upload foto */
+    .mock-upload {
+      background: rgba(255,255,255,0.4);
+      border-radius: 40px;
+      padding: 0.2rem 0.2rem 0.2rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px dashed #8bb3cf;
+      margin: 0.4rem 0 0.8rem;
+      max-width: 220px;
+    }
+
+    .mock-upload span {
+      font-size: 0.7rem;
+      color: #1b4a6b;
+      font-weight: 500;
+    }
+
+    .mock-upload i {
+      background: #0b2f47;
+      color: white;
+      padding: 0.5rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+    }
+  </style>
 </head>
 <body>
+<div class="container">
 
-    <header>
-        <div class="logo">Dia dos <span>Pais</span></div>
-    </header>
+  <!-- selo IA -->
+  <div class="ai-badge">
+    <i class="fas fa-robot"></i> gerado com IA · <span>presentes pai</span>
+    <i class="fas fa-circle" style="font-size: 0.3rem; color: #3d7ea0; margin-left: 0.2rem;"></i>
+  </div>
 
-    <section class="hero">
-        <h1>Para quem sempre foi o seu herói</h1>
-        <p>Neste Dia dos Pais, acerte em cheio no presente de quem adora colocar a mão na massa.</p>
-        <a href="#ferramentas" class="btn-cta">Ver Ofertas de Ferramentas</a>
-    </section>
+  <!-- hero -->
+  <div class="hero">
+    <div>
+      <h1>presente <span style="background: linear-gradient(135deg,#004b7a,#0088b0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">personalizado</span> <br>para o Dia dos Pais</h1>
+      <p><i class="fas fa-magic" style="color: #1f6390; margin-right: 8px;"></i> camisetas & canecas com foto · IA Style</p>
+    </div>
+    <div class="cta-ai">
+      <i class="fas fa-upload"></i> enviar foto + personalizar
+    </div>
+  </div>
 
-    <section class="tools-section" id="ferramentas">
-        <h2 class="section-title">Kits de Ferramentas em Promoção</h2>
-        <p class="section-subtitle">Os itens mais desejados com descontos exclusivos</p>
-        
-        <div class="tools-grid">
-            <div class="tool-card">
-                <div class="tool-image-placeholder">🧰</div>
-                <div class="tool-info">
-                    <div>
-                        <h3>Maleta Master Premium (41 Peças)</h3>
-                        <p>O kit mais versátil para o dia a dia. Inclui chaves de fenda, Philips, alicate universal, trena e martelo.</p>
-                    </div>
-                    <div>
-                        <div class="price-container">
-                            <div class="old-price">De R$ 249,90</div>
-                            <div class="new-price">R$ 149,90</div>
-                        </div>
-                        <a href="#" class="btn-buy">Comprar Agora</a>
-                    </div>
-                </div>
-            </div>
+  <!-- grade produtos -->
+  <div class="grid-produtos">
 
-            <div class="tool-card">
-                <div class="tool-image-placeholder">⚙️</div>
-                <div class="tool-info">
-                    <div>
-                        <h3>Combo Furadeira & Parafusadeira</h3>
-                        <p>A bateria e sem fio. Potência ideal para reformas e montagens rápidas, acompanhada de estojo de brocas.</p>
-                    </div>
-                    <div>
-                        <div class="price-container">
-                            <div class="old-price">De R$ 389,00</div>
-                            <div class="new-price">R$ 269,00</div>
-                        </div>
-                        <a href="#" class="btn-buy">Comprar Agora</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Camiseta 1 -->
+    <div class="card">
+      <div class="selo-ia"><i class="fas fa-star"></i> IA+</div>
+      <div class="icone"><i class="fas fa-tshirt"></i></div>
+      <h3>Camiseta</h3>
+      <div class="subtipo">algodão premium · 100%</div>
+      <div class="tamanhos">
+        <span>P</span> <span>M</span> <span>G</span> <span>GG</span> <span>XG</span>
+      </div>
+      <div class="personalizacao">
+        <i class="fas fa-image"></i> personalize com foto
+      </div>
+      <div class="mock-upload">
+        <span><i class="fas fa-camera" style="margin-right: 6px;"></i> adicione foto</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="preco">
+        R$ 89,90 <small>até 3 fotos</small>
+      </div>
+      <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> personalizar</span>
+        <span style="font-size: 0.75rem; background: #e5eff7; padding: 0.3rem 1rem; border-radius: 40px; color: #0b2f47;"><i class="fas fa-print"></i> estampa IA</span>
+      </div>
+      <div class="card-feature" style="margin-top: 0.8rem;">
+        <i class="fas fa-arrows-alt-h"></i> vários tamanhos
+      </div>
+    </div>
 
-            <div class="tool-card">
-                <div class="tool-image-placeholder">🔧</div>
-                <div class="tool-info">
-                    <div>
-                        <h3>Kit Profissional de Chaves</h3>
-                        <p>Perfeito para o pai que adora mexer no carro ou moto. Jogo de chaves catraca com encaixe rápido.</p>
-                    </div>
-                    <div>
-                        <div class="price-container">
-                            <div class="old-price">De R$
+    <!-- Camiseta 2 - versão plus -->
+    <div class="card">
+      <div class="selo-ia"><i class="fas fa-crown"></i> premium</div>
+      <div class="icone"><i class="fas fa-tshirt"></i></div>
+      <h3>Camiseta <span style="font-size: 1rem; font-weight: 400; color: #2d5a79;">dry fit</span></h3>
+      <div class="subtipo">tecnologia · respirável</div>
+      <div class="tamanhos">
+        <span>P</span> <span>M</span> <span>G</span> <span>GG</span> <span>XG</span> <span>XXG</span>
+      </div>
+      <div class="personalizacao">
+        <i class="fas fa-image"></i> foto + nome
+      </div>
+      <div class="mock-upload">
+        <span><i class="fas fa-image" style="margin-right: 6px;"></i> upload foto</span>
+        <i class="fas fa-check-circle" style="background: #1e7b4b;"></i>
+      </div>
+      <div class="preco">
+        R$ 119,90 <small>personalização IA</small>
+      </div>
+      <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> editar</span>
+        <span style="font-size: 0.75rem; background: #dcebf5; padding: 0.3rem 1rem; border-radius: 40px; color: #0b2f47;"><i class="fas fa-mask"></i> IA photo</span>
+      </div>
+    </div>
+
+    <!-- Caneca 1 -->
+    <div class="card">
+      <div class="selo-ia"><i class="fas fa-mug-hot"></i> edição</div>
+      <div class="icone"><i class="fas fa-mug-saucer"></i></div>
+      <h3>Caneca</h3>
+      <div class="subtipo">porcelana · 330ml</div>
+      <div class="tamanhos">
+        <span>330ml</span> <span>450ml</span> <span>550ml</span>
+      </div>
+      <div class="personalizacao">
+        <i class="fas fa-image"></i> foto 360°
+      </div>
+      <div class="mock-upload">
+        <span><i class="fas fa-upload"></i> enviar foto</span>
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="preco">
+        R$ 49,90 <small>foto dupla-face</small>
+      </div>
+      <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> personalizar</span>
+        <span style="font-size: 0.75rem; background: #e5eff7; padding: 0.3rem 1rem; border-radius: 40px; color: #0b2f47;"><i class="fas fa-rotate"></i> 360°</span>
+      </div>
+      <div class="card-feature" style="margin-top: 0.8rem;">
+        <i class="fas fa-vector-square"></i> moldura IA
+      </div>
+    </div>
+
+    <!-- Caneca 2 - plus -->
+    <div class="card">
+      <div class="selo-ia"><i class="fas fa-wand-magic-sparkles"></i> IA</div>
+      <div class="icone"><i class="fas fa-mug-hot"></i></div>
+      <h3>Caneca <span style="font-size: 1rem; font-weight: 400; color: #2d5a79;">termo</span></h3>
+      <div class="subtipo">aço inox · 500ml</div>
+      <div class="tamanhos">
+        <span>350ml</span> <span>500ml</span> <span>700ml</span>
+      </div>
+      <div class="personalizacao">
+        <i class="fas fa-image"></i> foto + texto
+      </div>
+      <div class="mock-upload">
+        <span><i class="fas fa-camera"></i> foto pai</span>
+        <i class="fas fa-check" style="background: #1e7b4b; padding: 0.2rem 0.6rem; border-radius: 30px;"></i>
+      </div>
+      <div class="preco">
+        R$ 69,90 <small>personalização</small>
+      </div>
+      <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> customizar</span>
+        <span style="font-size: 0.75rem; background: #dcebf5; padding: 0.3rem 1rem; border-radius: 40px; color: #0b2f47;"><i class="fas fa-font"></i> texto IA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- linha extra com destaque IA -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem 2.5rem; background: rgba(255,255,255,0.3); backdrop-filter: blur(4px); border-radius: 80px; padding: 0.8rem 2rem; margin: 1rem 0 2.5rem; border: 1px solid rgba(255,255,255,0.6);">
+    <span><i class="fas fa-robot" style="color: #005f8a;"></i> design assistido por IA</span>
+    <span><i class="fas fa-upload"></i> envie sua foto</span>
+    <span><i class="fas fa-palette"></i> 6 estilos de edição</span>
+    <span><i class="fas fa-tag"></i> frete grátis*</span>
+  </div>
+
+  <!-- rodapé com toque ia -->
+  <div class="footer-ai">
+    <span><i class="fas fa-gift"></i> Dia dos Pais · presente com IA</span>
+    <span><i class="fas fa-circle" style="font-size: 0.3rem; color: #2f7799;"></i> camisetas · canecas · personalização com foto</span>
+    <span class="badge-ia"><i class="fas fa-microchip"></i> IA generative</span>
+  </div>
+
+  <!-- pequena nota de transparência -->
+  <div style="margin-top: 1.2rem; font-size: 0.7rem; color: #6b8aa3; text-align: center; border-top: 1px solid rgba(0,0,0,0.02); padding-top: 1rem;">
+    <i class="fas fa-shield-alt"></i> todos os produtos podem ser personalizados com foto · tamanhos variados
+  </div>
+
+</div>
+</body>
+</html>
