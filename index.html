@@ -335,6 +335,109 @@
       margin-right: 8px;
     }
 
+    /* ============================================ */
+    /* SEÇÃO DE AVALIAÇÕES */
+    /* ============================================ */
+    .avaliacoes-section {
+      background: #ffffff;
+      border-radius: 48px;
+      padding: 2.5rem;
+      margin: 2.5rem 0;
+      border: 1px solid #e6edf5;
+      box-shadow: 0 6px 18px rgba(0, 20, 40, 0.03);
+    }
+
+    .avaliacoes-section h2 {
+      font-size: 2rem;
+      color: #003153;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .avaliacoes-section .sub-avaliacoes {
+      text-align: center;
+      color: #4d6f8a;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .avaliacoes-section .sub-avaliacoes i {
+      color: #f5b342;
+    }
+
+    .grid-avaliacoes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .avaliacao-card {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid #eef4fa;
+      transition: 0.15s;
+    }
+
+    .avaliacao-card:hover {
+      border-color: #d5e2ef;
+      background: #ffffff;
+    }
+
+    .avaliacao-card .estrelas {
+      color: #f5b342;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .avaliacao-card .estrelas .fa-star {
+      margin-right: 2px;
+    }
+
+    .avaliacao-card .texto-avaliacao {
+      font-size: 0.95rem;
+      color: #14212b;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+
+    .avaliacao-card .cliente {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .avaliacao-card .cliente .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #dce6ef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #003153;
+      font-size: 1.1rem;
+    }
+
+    .avaliacao-card .cliente .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .avaliacao-card .cliente .info .nome {
+      font-weight: 700;
+      color: #003153;
+      font-size: 0.9rem;
+    }
+
+    .avaliacao-card .cliente .info .data {
+      font-size: 0.7rem;
+      color: #6b8ba3;
+    }
+
     .footer-profissional {
       margin-top: 4rem;
       text-align: center;
@@ -393,6 +496,7 @@
       .hero h1 { font-size: 2.4rem; }
       .header-tag { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
       .card { padding: 1.5rem; }
+      .avaliacoes-section { padding: 1.5rem; }
       .whatsapp-fixo {
         width: 60px;
         height: 60px;
@@ -539,6 +643,147 @@
     <span><i class="fas fa-anchor"></i> MEU PORTO SEGURO</span>
   </div>
 
+  <!-- ============================================ -->
+  <!-- SEÇÃO DE AVALIAÇÕES FALSAS                   -->
+  <!-- ============================================ -->
+  <div class="avaliacoes-section">
+    <h2><i class="fas fa-star" style="color: #f5b342;"></i> O QUE NOSSOS CLIENTES DIZEM</h2>
+    <p class="sub-avaliacoes">
+      <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> 
+      4.9 de 5 · Mais de 280 avaliações
+    </p>
+
+    <div class="grid-avaliacoes">
+
+      <!-- Avaliação 1 -->
+      <div class="avaliacao-card">
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="texto-avaliacao">
+          "Meu pai amou a camiseta! A qualidade é incrível e a estampa ficou perfeita. Chegou antes do prazo e ele usou no almoço de domingo. Recomendo demais!"
+        </p>
+        <div class="cliente">
+          <div class="avatar" style="background: #d4e2f0;">C</div>
+          <div class="info">
+            <span class="nome">Carla Menezes</span>
+            <span class="data">15 de maio, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avaliação 2 -->
+      <div class="avaliacao-card">
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="texto-avaliacao">
+          "Comprei a caneca personalizada com foto da família e meu pai ficou emocionado. O atendimento pelo WhatsApp foi rápido e a entrega foi muito ágil. Nota 10!"
+        </p>
+        <div class="cliente">
+          <div class="avatar" style="background: #f5e6d3;">R</div>
+          <div class="info">
+            <span class="nome">Rodrigo Almeida</span>
+            <span class="data">10 de maio, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avaliação 3 -->
+      <div class="avaliacao-card">
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="texto-avaliacao">
+          "Simplesmente perfeito! A camiseta Dry Fit é de altíssima qualidade, o tecido é leve e a estampa com a foto ficou nítida. Meu pai adorou o presente."
+        </p>
+        <div class="cliente">
+          <div class="avatar" style="background: #d9e8e0;">F</div>
+          <div class="info">
+            <span class="nome">Fernanda Lima</span>
+            <span class="data">5 de maio, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avaliação 4 -->
+      <div class="avaliacao-card">
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="texto-avaliacao">
+          "Fiquei impressionada com a qualidade da caneca termo. A foto ficou nítida e a tinta não desbota. Meu pai usa todos os dias no trabalho. Valeu cada centavo!"
+        </p>
+        <div class="cliente">
+          <div class="avatar" style="background: #f0dce8;">A</div>
+          <div class="info">
+            <span class="nome">Amanda Souza</span>
+            <span class="data">28 de abril, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avaliação 5 -->
+      <div class="avaliacao-card">
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="texto-avaliacao">
+          "Ótimo custo-benefício! A camiseta é macia, a estampa não desbotou após as lavagens e o atendimento foi excelente. Com certeza comprarei novamente."
+        </p>
+        <div class="cliente">
+          <div class="avatar" style="background: #dce8f0;">M</div>
+          <div class="info">
+            <span class="nome">Marcelo Costa</span>
+            <span class="data">20 de abril, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avaliação 6 -->
+      <div class="avaliacao-card">
+        <div class="estrelas">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="texto-avaliacao">
+          "Comprei para o Dia dos Pais e foi um sucesso! A personalização com a foto ficou linda e a entrega foi super rápida. Recomendo a todos que querem um presente único."
+        </p>
+        <div class="cliente">
+          <div class="avatar" style="background: #f5e0d0;">P</div>
+          <div class="info">
+            <span class="nome">Patrícia Rocha</span>
+            <span class="data">15 de abril, 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- rodapé profissional -->
   <div class="footer-profissional">
     <span><i class="fas fa-gift"></i> DIA DOS PAIS · EDIÇÃO PERSONALIZADA</span>
@@ -560,4 +805,4 @@
 
 </div>
 </body>
-</html>
+</
