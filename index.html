@@ -64,4 +64,237 @@
         .btn-cta {
             background-color: var(--secondary-color);
             color: var(--primary-color);
-            padding: 15
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Seção de Ferramentas (Nova) */
+        .tools-section {
+            padding: 80px 20px;
+            background-color: var(--white);
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .tool-card {
+            background-color: var(--white);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .tool-info {
+            padding: 25px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tool-info h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .tool-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .price-container {
+            margin-bottom: 20px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        .new-price {
+            color: var(--price-color);
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        .btn-buy {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+            display: block;
+        }
+        .btn-buy:hover {
+            background-color: #2c4a75;
+        }
+
+        /* Seção Sobre / Frete */
+        .about {
+            padding: 80px 20px;
+            background-color: var(--light-bg);
+        }
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .about-container { flex-direction: column-reverse; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Dia dos <span>Pais</span></div>
+    </header>
+
+    <section class="hero">
+        <h1>Para quem sempre foi o seu herói</h1>
+        <p>Neste Dia dos Pais, acerte em cheio no presente de quem adora colocar a mão na massa.</p>
+        <a href="#ferramentas" class="btn-cta">Ver Ofertas de Ferramentas</a>
+    </section>
+
+    <section class="tools-section" id="ferramentas">
+        <h2 class="section-title">Kits de Ferramentas em Promoção</h2>
+        <p class="section-subtitle">Os itens mais desejados e usados com descontos exclusivos para o Dia dos Pais</p>
+        
+        <div class="tools-grid">
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=600" alt="Maleta de Ferramentas Completa" class="tool-image">
+                <div class="tool-info">
+                    <div>
+                        <h3>Maleta Master Premium (41 Peças)</h3>
+                        <p>O kit mais versátil para o dia a dia. Inclui chaves de fenda, Philips, alicate universal, trena e martelo de alta resistência.</p>
+                    </div>
+                    <div>
+                        <div class="price-container">
+                            <div class="old-price">De R$ 249,90</div>
+                            <div class="new-price">R$ 149,90</div>
+                        </div>
+                        <a href="#" class="btn-buy">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=600" alt="Parafusadeira Elétrica" class="tool-image">
+                <div class="tool-info">
+                    <div>
+                        <h3>Combo Furadeira & Parafusadeira</h3>
+                        <p>A bateria e sem fio. Potência ideal para reformas e montagens rápidas, acompanhada de um estojo com 12 brocas e bits diferentes.</p>
+                    </div>
+                    <div>
+                        <div class="price-container">
+                            <div class="old-price">De R$ 389,00</div>
+                            <div class="new-price">R$ 269,00</div>
+                        </div>
+                        <a href="#" class="btn-buy">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?q=80&w=600" alt="Kit Chave de Catraca" class="tool-image">
+                <div class="tool-info">
+                    <div>
+                        <h3>Kit Profissional de Chaves Soquete</h3>
+                        <p>Perfeito para o pai que adora mexer no carro ou moto. Jogo de chaves catraca com encaixe rápido e aço cromo vanádio.</p>
+                    </div>
+                    <div>
+                        <div class="price-container">
+                            <div class="old-price">De R$ 199,00</div>
+                            <div class="new-price">R$ 119,90</div>
+                        </div>
+                        <a href="#" class="btn-buy">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600" alt="Pai e filhos">
+            </div>
+            <div class="about-content">
+                <h2>Não perca o prazo do frete!</h2>
+                <p>Compre com antecedência e garanta que as ferramentas do seu herói cheguem perfeitamente embaladas antes do almoço de Dia dos Pais.</p>
+                <p style="margin-top: 10px;"><strong>Frete Grátis</strong> para todo o Brasil neste mês de campanha.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sua Loja de Ferramentas. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
