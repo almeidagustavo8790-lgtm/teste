@@ -11,6 +11,7 @@
             --text-color: #333333;
             --light-bg: #f8f9fa;
             --white: #ffffff;
+            --price-color: #27ae60;
         }
         * {
             margin: 0;
@@ -41,7 +42,7 @@
         }
         .hero {
             background: linear-gradient(rgba(26, 47, 76, 0.85), rgba(26, 47, 76, 0.85)), url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1920') no-repeat center center/cover;
-            height: 70vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -63,125 +64,4 @@
         .btn-cta {
             background-color: var(--secondary-color);
             color: var(--primary-color);
-            padding: 15px 35px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-        .features {
-            padding: 80px 20px;
-            background-color: var(--light-bg);
-            text-align: center;
-        }
-        .section-title {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 50px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .card {
-            background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        .about {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 50px;
-        }
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .about { flex-direction: column-reverse; text-align: center; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">Dia dos <span>Pais</span></div>
-    </header>
-
-    <section class="hero">
-        <h1>Para quem sempre foi o seu herói</h1>
-        <p>Neste Dia dos Pais, retribua todo o amor, dedicação e ensinamentos com um presente único.</p>
-        <a href="#produtos" class="btn-cta">Garantir o Presente Dele</a>
-    </section>
-
-    <section class="features" id="produtos">
-        <h2 class="section-title">Categorias em Destaque</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">💼</div>
-                <h3>Estilo & Elegância</h3>
-                <p>Roupas, acessórios de couro e calçados para o pai clássico.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">☕</div>
-                <h3>Momentos & Sabores</h3>
-                <p>Kits de café gourmet e bebidas selecionadas.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🛠️</div>
-                <h3>Hobbies & Paixões</h3>
-                <p>Ferramentas, itens de churrasco e tecnologia.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600" alt="Pai e filhos">
-        </div>
-        <div class="about-content">
-            <h2>Não perca o prazo!</h2>
-            <p>Compre com antecedência e garanta que o presente chegue a tempo para o grande dia.</p>
-            <p><strong>Frete grátis</strong> para compras selecionadas.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Sua Loja. Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+            padding: 15
