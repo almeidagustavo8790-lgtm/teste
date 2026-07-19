@@ -1,11 +1,9 @@
-Aqui está o código HTML completamente reformulado. Ele remove todos os termos e ícones relacionados a "IA" e "robôs", adotando um tom mais profissional e emotivo, com frases como "Meu pai, meu orgulho" e um layout mais sofisticado para o Dia dos Pais.
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <title>Pai · Orgulho & Personalização</title>
+  <title>Dia dos Pais · Presentes Personalizados</title>
   <!-- Fonte e ícones -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,7 +108,7 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
     }
 
     .hero .cta-principal {
-      background: #003153;
+      background: #25D366;
       color: white;
       border: none;
       padding: 1rem 2.8rem;
@@ -120,15 +118,22 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      box-shadow: 0 12px 24px -10px rgba(0, 30, 60, 0.25);
+      box-shadow: 0 12px 24px -10px rgba(37, 211, 102, 0.35);
       transition: 0.15s;
-      cursor: default;
+      cursor: pointer;
       margin-top: 0.8rem;
       border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+
+    .hero .cta-principal:hover {
+      background: #20b85a;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -10px rgba(37, 211, 102, 0.45);
     }
 
     .hero .cta-principal i {
-      color: #e8d5b5;
+      color: white;
     }
 
     .grid-produtos {
@@ -226,32 +231,6 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       color: #b68b5c;
     }
 
-    .mock-upload {
-      background: #f5f9ff;
-      border-radius: 60px;
-      padding: 0.2rem 0.2rem 0.2rem 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: 1px dashed #aac0d3;
-      margin: 0.2rem 0 1rem;
-      max-width: 220px;
-    }
-
-    .mock-upload span {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #003153;
-    }
-
-    .mock-upload i {
-      background: #003153;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 60px;
-      font-size: 0.7rem;
-    }
-
     .preco {
       font-size: 1.8rem;
       font-weight: 700;
@@ -270,25 +249,33 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       color: #4d6f8a;
     }
 
-    .btn-personalizar {
-      background: #003153;
+    .btn-comprar {
+      background: #25D366;
       border: none;
       color: white;
       font-weight: 700;
       font-size: 0.9rem;
-      padding: 0.6rem 1.8rem;
+      padding: 0.7rem 2rem;
       border-radius: 60px;
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
       transition: 0.15s;
-      box-shadow: 0 6px 14px -6px rgba(0, 30, 60, 0.25);
-      cursor: default;
+      box-shadow: 0 6px 14px -6px rgba(37, 211, 102, 0.35);
+      cursor: pointer;
       border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
     }
 
-    .btn-personalizar i {
-      color: #e8d5b5;
+    .btn-comprar:hover {
+      background: #20b85a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -6px rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-comprar i {
+      color: white;
+      font-size: 1rem;
     }
 
     .badge-destaque {
@@ -371,12 +358,48 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       color: #003153;
     }
 
+    .whatsapp-fixo {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+      transition: 0.2s;
+      z-index: 1000;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .whatsapp-fixo:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 36px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-fixo i {
+      color: white;
+    }
+
     @media (max-width: 650px) {
       body { padding: 1.2rem; }
       .hero { padding: 1.5rem; }
       .hero h1 { font-size: 2.4rem; }
       .header-tag { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
       .card { padding: 1.5rem; }
+      .whatsapp-fixo {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        bottom: 20px;
+        right: 20px;
+      }
     }
   </style>
 </head>
@@ -400,9 +423,9 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       <div class="subtitulo">
         <i class="fas fa-camera" style="color: #b68b5c; margin-right: 10px;"></i> CAMISETAS E CANECAS · COM FOTO
       </div>
-      <div class="cta-principal">
-        <i class="fas fa-upload"></i> PERSONALIZAR COM FOTO
-      </div>
+      <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20um%20presente%20personalizado%20para%20o%20Dia%20dos%20Pais." target="_blank" class="cta-principal">
+        <i class="fab fa-whatsapp"></i> COMPRAR PELO WHATSAPP
+      </a>
     </div>
     <div style="margin-top: 0.8rem; font-weight: 500; color: #003153; background: rgba(255,255,255,0.4); padding: 0.4rem 1.8rem; border-radius: 60px; border: 1px solid rgba(255,255,255,0.5);">
       <i class="fas fa-heart" style="color: #b68b5c;"></i> EDIÇÃO EXCLUSIVA
@@ -424,15 +447,13 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       <div class="personalizacao">
         <i class="fas fa-image"></i> PERSONALIZE COM FOTO
       </div>
-      <div class="mock-upload">
-        <span><i class="fas fa-camera" style="margin-right: 6px;"></i> ADICIONE FOTO</span>
-        <i class="fas fa-arrow-right"></i>
-      </div>
       <div class="preco">
         R$ 89,90 <small>ATÉ 3 FOTOS</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> PERSONALIZAR</span>
+        <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20a%20CAMISETA%20PREMIUM%20(R$%2089,90)%20personalizada%20para%20o%20Dia%20dos%20Pais." target="_blank" class="btn-comprar">
+          <i class="fab fa-whatsapp"></i> COMPRAR
+        </a>
         <span class="selo-orgulho"><i class="fas fa-star"></i> EDIÇÃO ESPECIAL</span>
       </div>
     </div>
@@ -449,15 +470,13 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       <div class="personalizacao">
         <i class="fas fa-image"></i> FOTO + NOME GRAVADO
       </div>
-      <div class="mock-upload">
-        <span><i class="fas fa-upload"></i> ENVIAR FOTO</span>
-        <i class="fas fa-check" style="background: #1e7b4b;"></i>
-      </div>
       <div class="preco">
         R$ 119,90 <small>PERSONALIZAÇÃO</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> EDITAR</span>
+        <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20a%20CAMISETA%20DRY%20FIT%20(R$%20119,90)%20personalizada%20para%20o%20Dia%20dos%20Pais." target="_blank" class="btn-comprar">
+          <i class="fab fa-whatsapp"></i> COMPRAR
+        </a>
         <span class="selo-orgulho"><i class="fas fa-crown"></i> EDIÇÃO OURO</span>
       </div>
     </div>
@@ -474,15 +493,13 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       <div class="personalizacao">
         <i class="fas fa-image"></i> FOTO 360°
       </div>
-      <div class="mock-upload">
-        <span><i class="fas fa-camera"></i> FOTO DO PAI</span>
-        <i class="fas fa-arrow-right"></i>
-      </div>
       <div class="preco">
         R$ 49,90 <small>FOTO DUPLA-FACE</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> PERSONALIZAR</span>
+        <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20a%20CANECA%20PORCELANA%20(R$%2049,90)%20personalizada%20para%20o%20Dia%20dos%20Pais." target="_blank" class="btn-comprar">
+          <i class="fab fa-whatsapp"></i> COMPRAR
+        </a>
         <span class="selo-orgulho"><i class="fas fa-rotate"></i> 360°</span>
       </div>
     </div>
@@ -499,15 +516,13 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
       <div class="personalizacao">
         <i class="fas fa-image"></i> FOTO + TEXTO
       </div>
-      <div class="mock-upload">
-        <span><i class="fas fa-upload"></i> UPLOAD FOTO</span>
-        <i class="fas fa-check" style="background: #1e7b4b;"></i>
-      </div>
       <div class="preco">
         R$ 69,90 <small>PERSONALIZAÇÃO</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="btn-personalizar"><i class="fas fa-pen-fancy"></i> CUSTOMIZAR</span>
+        <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20a%20CANECA%20TERMO%20(R$%2069,90)%20personalizada%20para%20o%20Dia%20dos%20Pais." target="_blank" class="btn-comprar">
+          <i class="fab fa-whatsapp"></i> COMPRAR
+        </a>
         <span class="selo-orgulho"><i class="fas fa-font"></i> TEXTO EXCLUSIVO</span>
       </div>
     </div>
@@ -520,6 +535,8 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
     <span><i class="fas fa-gem"></i> HERANÇA DE AMOR</span>
     <span><i class="fas fa-shield"></i> MEU GUARDIÃO</span>
     <span><i class="fas fa-hands"></i> EXEMPLO DE VIDA</span>
+    <span><i class="fas fa-crown"></i> MEU REI</span>
+    <span><i class="fas fa-anchor"></i> MEU PORTO SEGURO</span>
   </div>
 
   <!-- rodapé profissional -->
@@ -532,9 +549,15 @@ Aqui está o código HTML completamente reformulado. Ele remove todos os termos 
   <!-- nota final -->
   <div style="margin-top: 1.5rem; font-size: 0.75rem; color: #5a7a93; text-align: center; border-top: 1px solid #e4ecf4; padding-top: 1.2rem;">
     <i class="fas fa-check-circle" style="color: #b68b5c;"></i> TODOS OS PRODUTOS SÃO PERSONALIZÁVEIS COM FOTO · TAMANHOS VARIADOS
+    <br><br>
+    <i class="fas fa-heart" style="color: #b68b5c;"></i> "O melhor presente é aquele que vem do coração" <i class="fas fa-heart" style="color: #b68b5c;"></i>
   </div>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20um%20presente%20personalizado%20para%20o%20Dia%20dos%20Pais." target="_blank" class="whatsapp-fixo" aria-label="Comprar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </div>
 </body>
 </html>
-```
