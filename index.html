@@ -1,15 +1,3 @@
-Perfeito! Vou criar um sistema completo para você:
-
-1. **Botão "COMPRAR"** → abre um **modal de checkout** com opções de pagamento
-2. **Após o checkout** → redireciona para o **WhatsApp** com os dados do pedido
-3. **Gateway de pagamento** integrada (simulação com botão de pagamento)
-
----
-
-## 📦 **HTML COMPLETO ATUALIZADO**
-
-Aqui está o site completo com **sistema de checkout** e **redirecionamento para WhatsApp**:
-
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,7 +16,6 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #f4f7fc;
@@ -36,13 +23,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       line-height: 1.5;
       padding: 2rem 1.5rem;
     }
-
     .container {
       max-width: 1280px;
       margin: 0 auto;
     }
-
-    /* HEADER */
     .header-tag {
       display: flex;
       flex-wrap: wrap;
@@ -52,19 +36,16 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       padding-bottom: 1.5rem;
       margin-bottom: 2.5rem;
     }
-
     .header-tag .marca {
       font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: #003153;
     }
-
     .header-tag .marca i {
       color: #b68b5c;
       margin-right: 10px;
     }
-
     .header-tag .frase-emoção {
       background: #eef3f9;
       padding: 0.5rem 2rem;
@@ -76,13 +57,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border: 1px solid rgba(255,255,255,0.7);
       box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
-
     .header-tag .frase-emoção i {
       color: #b68b5c;
       margin-right: 10px;
     }
-
-    /* HERO */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -95,7 +73,6 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       box-shadow: 0 6px 18px rgba(0, 20, 40, 0.03);
       border: 1px solid rgba(255,255,255,0.6);
     }
-
     .hero h1 {
       font-size: 3.2rem;
       font-weight: 800;
@@ -103,12 +80,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       color: #003153;
       line-height: 1.1;
     }
-
     .hero h1 span {
       color: #b68b5c;
       display: inline-block;
     }
-
     .hero .subtitulo {
       font-size: 1.2rem;
       color: #28526b;
@@ -120,7 +95,6 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       display: inline-block;
       border: 1px solid rgba(255,255,255,0.8);
     }
-
     .hero .cta-principal {
       background: #25D366;
       color: white;
@@ -139,20 +113,16 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border: 1px solid rgba(255,255,255,0.1);
       text-decoration: none;
     }
-
     .hero .cta-principal:hover {
       background: #20b85a;
       transform: translateY(-2px);
     }
-
-    /* PRODUTOS */
     .grid-produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.5rem;
       margin: 2rem 0 3.5rem;
     }
-
     .card {
       background: #ffffff;
       border-radius: 40px;
@@ -164,12 +134,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       flex-direction: column;
       position: relative;
     }
-
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 24px 44px -14px rgba(0, 30, 60, 0.12);
     }
-
     .card .imagem-produto {
       width: 100%;
       height: 200px;
@@ -183,14 +151,12 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       color: #003153;
       border: 1px solid rgba(255,255,255,0.5);
     }
-
     .card h3 {
       font-size: 1.9rem;
       font-weight: 700;
       color: #003153;
       margin-bottom: 0.2rem;
     }
-
     .card .descricao-curta {
       font-size: 0.85rem;
       font-weight: 500;
@@ -201,14 +167,12 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border-radius: 40px;
       margin-bottom: 1rem;
     }
-
     .card .tamanhos {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem 0.5rem;
       margin: 0.6rem 0 1rem;
     }
-
     .card .tamanhos button {
       padding: 0.3rem 1rem;
       border-radius: 40px;
@@ -220,17 +184,14 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       color: #003153;
       transition: 0.15s;
     }
-
     .card .tamanhos button:hover {
       background: #d5e2ef;
     }
-
     .card .tamanhos button.ativo {
       background: #003153;
       color: white;
       border: none;
     }
-
     .card .personalizacao {
       background: #eef5fb;
       border-radius: 60px;
@@ -245,11 +206,9 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border: 1px solid rgba(255,255,255,0.5);
       width: fit-content;
     }
-
     .card .personalizacao i {
       color: #b68b5c;
     }
-
     .preco {
       font-size: 1.8rem;
       font-weight: 700;
@@ -261,13 +220,11 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       justify-content: space-between;
       align-items: center;
     }
-
     .preco small {
       font-size: 0.8rem;
       font-weight: 400;
       color: #4d6f8a;
     }
-
     .btn-comprar {
       background: #25D366;
       border: none;
@@ -285,12 +242,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border: 1px solid rgba(255,255,255,0.1);
       text-decoration: none;
     }
-
     .btn-comprar:hover {
       background: #20b85a;
       transform: translateY(-2px);
     }
-
     .badge-destaque {
       position: absolute;
       top: 1rem;
@@ -303,7 +258,6 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       font-weight: 700;
       letter-spacing: 0.5px;
     }
-
     .selo-orgulho {
       background: #f7f1e8;
       border-radius: 60px;
@@ -317,11 +271,9 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border: 1px solid #e2d7c8;
       margin-top: 0.6rem;
     }
-
     .selo-orgulho i {
       color: #b68b5c;
     }
-
     .frases-emocionais {
       display: flex;
       flex-wrap: wrap;
@@ -333,13 +285,11 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       margin: 2rem 0 2.8rem;
       border: 1px solid #e6edf5;
     }
-
     .frases-emocionais span {
       font-weight: 600;
       color: #003153;
       font-size: 0.95rem;
     }
-
     .frases-emocionais i {
       color: #b68b5c;
       margin-right: 8px;
@@ -353,31 +303,26 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       margin: 2.5rem 0;
       border: 1px solid #e6edf5;
     }
-
     .avaliacoes-section h2 {
       font-size: 2rem;
       color: #003153;
       text-align: center;
       margin-bottom: 0.5rem;
     }
-
     .avaliacoes-section .sub-avaliacoes {
       text-align: center;
       color: #4d6f8a;
       margin-bottom: 2rem;
       font-size: 1rem;
     }
-
     .avaliacoes-section .sub-avaliacoes i {
       color: #f5b342;
     }
-
     .grid-avaliacoes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.8rem;
     }
-
     .avaliacao-card {
       background: #f8fafc;
       border-radius: 24px;
@@ -385,12 +330,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       border: 1px solid #eef4fa;
       transition: 0.15s;
     }
-
     .avaliacao-card:hover {
       border-color: #d5e2ef;
       background: #ffffff;
     }
-
     .avaliacao-card .foto-produto-avaliacao {
       width: 100%;
       height: 140px;
@@ -404,14 +347,12 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       color: #003153;
       border: 1px solid rgba(255,255,255,0.5);
     }
-
     .avaliacao-card .estrelas {
       color: #f5b342;
       font-size: 1rem;
       margin-bottom: 0.5rem;
       letter-spacing: 2px;
     }
-
     .avaliacao-card .texto-avaliacao {
       font-size: 0.95rem;
       color: #14212b;
@@ -419,13 +360,11 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       margin-bottom: 0.8rem;
       font-style: italic;
     }
-
     .avaliacao-card .cliente {
       display: flex;
       align-items: center;
       gap: 0.8rem;
     }
-
     .avaliacao-card .cliente .avatar {
       width: 44px;
       height: 44px;
@@ -438,21 +377,17 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       color: #003153;
       font-size: 1.1rem;
     }
-
     .avaliacao-card .cliente .info .nome {
       font-weight: 700;
       color: #003153;
       font-size: 0.9rem;
     }
-
     .avaliacao-card .cliente .info .data {
       font-size: 0.7rem;
       color: #6b8ba3;
     }
 
-    /* ============================================ */
-    /* MODAL DE CHECKOUT                            */
-    /* ============================================ */
+    /* MODAL */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -467,11 +402,9 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       justify-content: center;
       padding: 1.5rem;
     }
-
     .modal-overlay.ativo {
       display: flex;
     }
-
     .modal-checkout {
       background: #ffffff;
       border-radius: 48px;
@@ -483,12 +416,10 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
       animation: modalEntrar 0.3s ease;
     }
-
     @keyframes modalEntrar {
       from { transform: scale(0.9); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
-
     .modal-checkout .fechar-modal {
       float: right;
       background: none;
@@ -498,18 +429,15 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       cursor: pointer;
       transition: 0.15s;
     }
-
     .modal-checkout .fechar-modal:hover {
       color: #003153;
       transform: rotate(90deg);
     }
-
     .modal-checkout h2 {
       font-size: 1.8rem;
       color: #003153;
       margin-bottom: 0.3rem;
     }
-
     .modal-checkout .resumo-pedido {
       background: #f8fafc;
       border-radius: 20px;
@@ -517,14 +445,12 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       margin: 1rem 0 1.5rem;
       border: 1px solid #eef4fa;
     }
-
     .modal-checkout .resumo-pedido .linha {
       display: flex;
       justify-content: space-between;
       padding: 0.3rem 0;
       font-size: 0.95rem;
     }
-
     .modal-checkout .resumo-pedido .total {
       border-top: 2px solid #dce6ef;
       padding-top: 0.6rem;
@@ -533,11 +459,9 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       font-size: 1.2rem;
       color: #003153;
     }
-
     .modal-checkout .form-group {
       margin-bottom: 1.2rem;
     }
-
     .modal-checkout .form-group label {
       display: block;
       font-weight: 600;
@@ -545,7 +469,6 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       margin-bottom: 0.3rem;
       font-size: 0.85rem;
     }
-
     .modal-checkout .form-group input,
     .modal-checkout .form-group select {
       width: 100%;
@@ -557,7 +480,6 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       background: #f8fafc;
       transition: 0.15s;
     }
-
     .modal-checkout .form-group input:focus,
     .modal-checkout .form-group select:focus {
       outline: none;
@@ -565,14 +487,12 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       background: #ffffff;
       box-shadow: 0 0 0 3px rgba(0, 49, 83, 0.08);
     }
-
     .modal-checkout .metodos-pagamento {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 0.8rem;
       margin: 1rem 0;
     }
-
     .modal-checkout .metodos-pagamento button {
       padding: 0.8rem;
       border-radius: 16px;
@@ -584,18 +504,15 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       transition: 0.15s;
       font-size: 0.85rem;
     }
-
     .modal-checkout .metodos-pagamento button:hover {
       border-color: #003153;
       background: #eef4fa;
     }
-
     .modal-checkout .metodos-pagamento button.selecionado {
       border-color: #003153;
       background: #003153;
       color: white;
     }
-
     .modal-checkout .btn-finalizar {
       width: 100%;
       padding: 1rem;
@@ -610,16 +527,13 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       box-shadow: 0 8px 20px -8px rgba(37, 211, 102, 0.4);
       margin-top: 1rem;
     }
-
     .modal-checkout .btn-finalizar:hover {
       background: #20b85a;
       transform: translateY(-2px);
     }
-
     .modal-checkout .btn-finalizar i {
       margin-right: 8px;
     }
-
     .modal-checkout .btn-pagar {
       width: 100%;
       padding: 1rem;
@@ -633,13 +547,11 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       transition: 0.15s;
       margin-top: 0.5rem;
     }
-
     .modal-checkout .btn-pagar:hover {
       background: #00487a;
       transform: translateY(-2px);
     }
 
-    /* FOOTER */
     .footer-profissional {
       margin-top: 4rem;
       text-align: center;
@@ -652,17 +564,14 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       justify-content: space-between;
       align-items: center;
     }
-
     .footer-profissional i {
       color: #b68b5c;
       margin: 0 4px;
     }
-
     .footer-profissional .marca-rodape {
       font-weight: 700;
       color: #003153;
     }
-
     .whatsapp-fixo {
       position: fixed;
       bottom: 30px;
@@ -682,11 +591,9 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       text-decoration: none;
       border: 2px solid rgba(255,255,255,0.2);
     }
-
     .whatsapp-fixo:hover {
       transform: scale(1.08);
     }
-
     @media (max-width: 650px) {
       body { padding: 1.2rem; }
       .hero { padding: 1.5rem; }
@@ -745,28 +652,28 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       </div>
       <h3>CAMISETA</h3>
       <div class="descricao-curta">ALGODÃO PREMIUM · 100%</div>
-      <div class="tamanhos">
-        <button class="ativo" onclick="selecionarTamanho(this, 'P')">P</button>
-        <button onclick="selecionarTamanho(this, 'M')">M</button>
-        <button onclick="selecionarTamanho(this, 'G')">G</button>
-        <button onclick="selecionarTamanho(this, 'GG')">GG</button>
-        <button onclick="selecionarTamanho(this, 'XG')">XG</button>
+      <div class="tamanhos" id="tamanhos-camiseta">
+        <button class="ativo" onclick="selecionarTamanho('camiseta', this, 'P')">P</button>
+        <button onclick="selecionarTamanho('camiseta', this, 'M')">M</button>
+        <button onclick="selecionarTamanho('camiseta', this, 'G')">G</button>
+        <button onclick="selecionarTamanho('camiseta', this, 'GG')">GG</button>
+        <button onclick="selecionarTamanho('camiseta', this, 'XG')">XG</button>
       </div>
       <div class="personalizacao">
         <i class="fas fa-image"></i> PERSONALIZE COM FOTO
       </div>
-      <div class="preco">
+      <div class="preco" id="preco-camiseta">
         R$ 89,90 <small>ATÉ 3 FOTOS</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <button onclick="abrirCheckout('Camiseta Premium', 89.90, 'P')" class="btn-comprar">
+        <button onclick="abrirCheckout('Camiseta Premium', 89.90, 'P', 'camiseta')" class="btn-comprar">
           COMPRAR
         </button>
         <span class="selo-orgulho"><i class="fas fa-star"></i> EDIÇÃO ESPECIAL</span>
       </div>
     </div>
 
-    <!-- MOLETOM CANGURU -->
+    <!-- MOLETOM -->
     <div class="card">
       <div class="badge-destaque">PREMIUM</div>
       <div class="imagem-produto">
@@ -774,29 +681,29 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       </div>
       <h3>MOLETOM CANGURU</h3>
       <div class="descricao-curta">PREMIUM · TECIDO MACIO</div>
-      <div class="tamanhos">
-        <button class="ativo" onclick="selecionarTamanho(this, 'P')">P</button>
-        <button onclick="selecionarTamanho(this, 'M')">M</button>
-        <button onclick="selecionarTamanho(this, 'G')">G</button>
-        <button onclick="selecionarTamanho(this, 'GG')">GG</button>
-        <button onclick="selecionarTamanho(this, 'XG')">XG</button>
-        <button onclick="selecionarTamanho(this, 'XXG')">XXG</button>
+      <div class="tamanhos" id="tamanhos-moletom">
+        <button class="ativo" onclick="selecionarTamanho('moletom', this, 'P')">P</button>
+        <button onclick="selecionarTamanho('moletom', this, 'M')">M</button>
+        <button onclick="selecionarTamanho('moletom', this, 'G')">G</button>
+        <button onclick="selecionarTamanho('moletom', this, 'GG')">GG</button>
+        <button onclick="selecionarTamanho('moletom', this, 'XG')">XG</button>
+        <button onclick="selecionarTamanho('moletom', this, 'XXG')">XXG</button>
       </div>
       <div class="personalizacao">
         <i class="fas fa-image"></i> FOTO + NOME BORDADO
       </div>
-      <div class="preco">
+      <div class="preco" id="preco-moletom">
         R$ 169,90 <small>PERSONALIZAÇÃO</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <button onclick="abrirCheckout('Moletom Canguru Premium', 169.90, 'P')" class="btn-comprar">
+        <button onclick="abrirCheckout('Moletom Canguru Premium', 169.90, 'P', 'moletom')" class="btn-comprar">
           COMPRAR
         </button>
         <span class="selo-orgulho"><i class="fas fa-crown"></i> EDIÇÃO OURO</span>
       </div>
     </div>
 
-    <!-- CANECA PORCELANA -->
+    <!-- CANECA -->
     <div class="card">
       <div class="badge-destaque">POPULAR</div>
       <div class="imagem-produto">
@@ -804,7 +711,7 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       </div>
       <h3>CANECA</h3>
       <div class="descricao-curta">PORCELANA · QUALIDADE PREMIUM</div>
-      <div class="tamanhos">
+      <div class="tamanhos" id="tamanhos-caneca">
         <button class="ativo" onclick="selecionarTamanhoCaneca(this, '330ml', 49.90)">330ML - R$ 49,90</button>
         <button onclick="selecionarTamanhoCaneca(this, '450ml', 59.90)">450ML - R$ 59,90</button>
         <button onclick="selecionarTamanhoCaneca(this, '550ml', 69.90)">550ML - R$ 69,90</button>
@@ -812,11 +719,11 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       <div class="personalizacao">
         <i class="fas fa-image"></i> FOTO 360°
       </div>
-      <div class="preco" id="preco-caneca1">
+      <div class="preco" id="preco-caneca">
         R$ 49,90 <small>FOTO DUPLA-FACE</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <button onclick="abrirCheckout('Caneca Porcelana', 49.90, '330ml')" class="btn-comprar" id="btn-caneca1">
+        <button onclick="abrirCheckout('Caneca Porcelana', 49.90, '330ml', 'caneca')" class="btn-comprar" id="btn-caneca">
           COMPRAR
         </button>
         <span class="selo-orgulho"><i class="fas fa-rotate"></i> 360°</span>
@@ -831,7 +738,7 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
       </div>
       <h3>CANECA TERMO</h3>
       <div class="descricao-curta">AÇO INOX · ISOLAMENTO TÉRMICO</div>
-      <div class="tamanhos">
+      <div class="tamanhos" id="tamanhos-caneca2">
         <button class="ativo" onclick="selecionarTamanhoCaneca2(this, '350ml', 69.90)">350ML - R$ 69,90</button>
         <button onclick="selecionarTamanhoCaneca2(this, '500ml', 79.90)">500ML - R$ 79,90</button>
         <button onclick="selecionarTamanhoCaneca2(this, '700ml', 89.90)">700ML - R$ 89,90</button>
@@ -843,7 +750,7 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
         R$ 69,90 <small>PERSONALIZAÇÃO</small>
       </div>
       <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <button onclick="abrirCheckout('Caneca Termo', 69.90, '350ml')" class="btn-comprar" id="btn-caneca2">
+        <button onclick="abrirCheckout('Caneca Termo', 69.90, '350ml', 'caneca2')" class="btn-comprar" id="btn-caneca2">
           COMPRAR
         </button>
         <span class="selo-orgulho"><i class="fas fa-font"></i> TEXTO EXCLUSIVO</span>
@@ -851,7 +758,7 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
     </div>
   </div>
 
-  <!-- FRASES EMOCIONAIS -->
+  <!-- FRASES -->
   <div class="frases-emocionais">
     <span><i class="fas fa-heart"></i> MEU PAI, MEU ORGULHO</span>
     <span><i class="fas fa-star"></i> HOMEM DE VALOR</span>
@@ -880,6 +787,4 @@ Aqui está o site completo com **sistema de checkout** e **redirecionamento para
         </div>
       </div>
       <div class="avaliacao-card">
-        <div class="foto-produto-avaliacao"><i class="fas fa-user" style="font-size: 3rem;"></i></div>
-        <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="texto-avaliacao">"O moletom cang
+        <div class="foto-produto-avaliacao
