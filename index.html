@@ -41,8 +41,8 @@
             color: var(--secondary-color);
         }
         .hero {
-            background: linear-gradient(rgba(26, 47, 76, 0.85), rgba(26, 47, 76, 0.85)), url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1920') no-repeat center center/cover;
-            height: 60vh;
+            background: linear-gradient(rgba(26, 47, 76, 0.9), rgba(26, 47, 76, 0.9));
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -71,17 +71,10 @@
             border-radius: 5px;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .btn-cta:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-            transform: translateY(-2px);
         }
         
-        /* Seção de Ferramentas (Nova) */
         .tools-section {
-            padding: 80px 20px;
+            padding: 60px 20px;
             background-color: var(--white);
             text-align: center;
         }
@@ -108,17 +101,17 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
         }
-        .tool-card:hover {
-            transform: translateY(-5px);
-        }
-        .tool-image {
+        .tool-image-placeholder {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
+            height: 200px;
+            background-color: #f1f3f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
         }
         .tool-info {
             padding: 25px;
@@ -159,43 +152,22 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background 0.2s;
             display: block;
         }
-        .btn-buy:hover {
-            background-color: #2c4a75;
-        }
 
-        /* Seção Sobre / Frete */
         .about {
-            padding: 80px 20px;
+            padding: 60px 20px;
             background-color: var(--light-bg);
+            text-align: center;
         }
         .about-container {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 50px;
         }
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about-content h2 {
+        .about h2 {
             font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 20px;
-        }
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
         }
         footer {
             background-color: var(--primary-color);
@@ -205,7 +177,6 @@
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            .about-container { flex-direction: column-reverse; text-align: center; }
         }
     </style>
 </head>
@@ -223,15 +194,15 @@
 
     <section class="tools-section" id="ferramentas">
         <h2 class="section-title">Kits de Ferramentas em Promoção</h2>
-        <p class="section-subtitle">Os itens mais desejados e usados com descontos exclusivos para o Dia dos Pais</p>
+        <p class="section-subtitle">Os itens mais desejados com descontos exclusivos</p>
         
         <div class="tools-grid">
             <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=600" alt="Maleta de Ferramentas Completa" class="tool-image">
+                <div class="tool-image-placeholder">🧰</div>
                 <div class="tool-info">
                     <div>
                         <h3>Maleta Master Premium (41 Peças)</h3>
-                        <p>O kit mais versátil para o dia a dia. Inclui chaves de fenda, Philips, alicate universal, trena e martelo de alta resistência.</p>
+                        <p>O kit mais versátil para o dia a dia. Inclui chaves de fenda, Philips, alicate universal, trena e martelo.</p>
                     </div>
                     <div>
                         <div class="price-container">
@@ -244,11 +215,11 @@
             </div>
 
             <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1621905252507-b354bc25edac?q=80&w=600" alt="Parafusadeira Elétrica" class="tool-image">
+                <div class="tool-image-placeholder">⚙️</div>
                 <div class="tool-info">
                     <div>
                         <h3>Combo Furadeira & Parafusadeira</h3>
-                        <p>A bateria e sem fio. Potência ideal para reformas e montagens rápidas, acompanhada de um estojo com 12 brocas e bits diferentes.</p>
+                        <p>A bateria e sem fio. Potência ideal para reformas e montagens rápidas, acompanhada de estojo de brocas.</p>
                     </div>
                     <div>
                         <div class="price-container">
@@ -261,40 +232,12 @@
             </div>
 
             <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a?q=80&w=600" alt="Kit Chave de Catraca" class="tool-image">
+                <div class="tool-image-placeholder">🔧</div>
                 <div class="tool-info">
                     <div>
-                        <h3>Kit Profissional de Chaves Soquete</h3>
-                        <p>Perfeito para o pai que adora mexer no carro ou moto. Jogo de chaves catraca com encaixe rápido e aço cromo vanádio.</p>
+                        <h3>Kit Profissional de Chaves</h3>
+                        <p>Perfeito para o pai que adora mexer no carro ou moto. Jogo de chaves catraca com encaixe rápido.</p>
                     </div>
                     <div>
                         <div class="price-container">
-                            <div class="old-price">De R$ 199,00</div>
-                            <div class="new-price">R$ 119,90</div>
-                        </div>
-                        <a href="#" class="btn-buy">Comprar Agora</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600" alt="Pai e filhos">
-            </div>
-            <div class="about-content">
-                <h2>Não perca o prazo do frete!</h2>
-                <p>Compre com antecedência e garanta que as ferramentas do seu herói cheguem perfeitamente embaladas antes do almoço de Dia dos Pais.</p>
-                <p style="margin-top: 10px;"><strong>Frete Grátis</strong> para todo o Brasil neste mês de campanha.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Sua Loja de Ferramentas. Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+                            <div class="old-price">De R$
