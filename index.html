@@ -3,280 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-    <title>Dia dos Pais · Presentes Personalizados</title>
+    <title>Checkout · Orgulho & Herança</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #f4f7fc; color: #14212b; line-height: 1.5; padding: 2rem 1.5rem; }
-        .container { max-width: 1280px; margin: 0 auto; }
-        .header-tag { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; border-bottom: 2px solid #dce6ef; padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
-        .header-tag .marca { font-size: 1.4rem; font-weight: 700; color: #003153; }
-        .header-tag .marca i { color: #b68b5c; margin-right: 10px; }
-        .header-tag .frase-emoção { background: #eef3f9; padding: 0.5rem 2rem; border-radius: 60px; font-weight: 600; color: #003153; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.7); }
-        .header-tag .frase-emoção i { color: #b68b5c; margin-right: 10px; }
-        .hero { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; background: linear-gradient(145deg, #ffffff, #f2f8fe); padding: 2rem 2.5rem; border-radius: 48px; border: 1px solid rgba(255,255,255,0.6); }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; color: #003153; line-height: 1.1; }
-        .hero h1 span { color: #b68b5c; }
-        .hero .subtitulo { font-size: 1.2rem; color: #28526b; margin-top: 0.5rem; background: rgba(255,255,255,0.6); padding: 0.4rem 1.8rem; border-radius: 60px; display: inline-block; }
-        .hero .cta-principal { background: #25D366; color: white; padding: 1rem 2.8rem; border-radius: 60px; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; margin-top: 0.8rem; transition: 0.15s; }
-        .hero .cta-principal:hover { background: #20b85a; transform: translateY(-2px); }
-        .grid-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin: 2rem 0 3.5rem; }
-        .card { background: #ffffff; border-radius: 40px; padding: 1.8rem; box-shadow: 0 10px 28px -8px rgba(0, 20, 40, 0.06); border: 1px solid #eef4fa; display: flex; flex-direction: column; position: relative; transition: 0.2s; }
-        .card:hover { transform: translateY(-6px); box-shadow: 0 24px 44px -14px rgba(0, 30, 60, 0.12); }
-        .card .imagem-produto { width: 100%; height: 200px; background: linear-gradient(145deg, #e7eef7, #d5e2ef); border-radius: 24px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #003153; }
-        .card h3 { font-size: 1.9rem; font-weight: 700; color: #003153; }
-        .card .descricao-curta { font-size: 0.85rem; font-weight: 500; color: #3e5f78; background: #eef4fa; display: inline-block; padding: 0.2rem 1.2rem; border-radius: 40px; margin: 0.5rem 0 1rem; }
-        .card .tamanhos { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.6rem 0 1rem; }
-        .card .tamanhos button { padding: 0.3rem 1rem; border-radius: 40px; border: 1px solid #dce6ef; font-weight: 600; cursor: pointer; font-size: 0.75rem; background: #eef4fa; color: #003153; transition: 0.15s; }
-        .card .tamanhos button:hover { background: #d5e2ef; }
-        .card .tamanhos button.ativo { background: #003153; color: white; border: none; }
-        .card .personalizacao { background: #eef5fb; border-radius: 60px; padding: 0.6rem 1.4rem; display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; font-weight: 600; color: #003153; margin: 0.4rem 0 1rem; width: fit-content; }
-        .card .personalizacao i { color: #b68b5c; }
-        .preco { font-size: 1.8rem; font-weight: 700; color: #003153; margin-top: auto; padding-top: 0.8rem; border-top: 1px solid #e4ecf4; display: flex; justify-content: space-between; align-items: center; }
-        .preco small { font-size: 0.8rem; font-weight: 400; color: #4d6f8a; }
-        .btn-comprar { background: #25D366; border: none; color: white; font-weight: 700; font-size: 0.9rem; padding: 0.7rem 2rem; border-radius: 60px; cursor: pointer; transition: 0.15s; box-shadow: 0 6px 14px -6px rgba(37, 211, 102, 0.35); }
-        .btn-comprar:hover { background: #20b85a; transform: translateY(-2px); }
-        .badge-destaque { position: absolute; top: 1rem; right: 1.2rem; background: #003153; color: #f5e9da; padding: 0.2rem 1rem; border-radius: 40px; font-size: 0.6rem; font-weight: 700; }
-        .selo-orgulho { background: #f7f1e8; border-radius: 60px; padding: 0.2rem 1.4rem 0.2rem 0.8rem; display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.75rem; font-weight: 600; color: #003153; border: 1px solid #e2d7c8; margin-top: 0.6rem; }
-        .selo-orgulho i { color: #b68b5c; }
-        .frases-emocionais { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem 2rem; background: #ffffff; border-radius: 80px; padding: 0.8rem 2.2rem; margin: 2rem 0 2.8rem; border: 1px solid #e6edf5; }
-        .frases-emocionais span { font-weight: 600; color: #003153; font-size: 0.95rem; }
-        .frases-emocionais i { color: #b68b5c; margin-right: 8px; }
-        .avaliacoes-section { background: #ffffff; border-radius: 48px; padding: 2.5rem; margin: 2.5rem 0; border: 1px solid #e6edf5; }
-        .avaliacoes-section h2 { font-size: 2rem; color: #003153; text-align: center; }
-        .avaliacoes-section .sub-avaliacoes { text-align: center; color: #4d6f8a; margin: 0.5rem 0 2rem; }
-        .avaliacoes-section .sub-avaliacoes i { color: #f5b342; }
-        .grid-avaliacoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
-        .avaliacao-card { background: #f8fafc; border-radius: 24px; padding: 1.5rem; border: 1px solid #eef4fa; }
-        .avaliacao-card:hover { border-color: #d5e2ef; background: #ffffff; }
-        .avaliacao-card .foto-produto-avaliacao { width: 100%; height: 140px; background: linear-gradient(145deg, #e7eef7, #d5e2ef); border-radius: 16px; margin-bottom: 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #003153; }
-        .avaliacao-card .estrelas { color: #f5b342; font-size: 1rem; margin-bottom: 0.5rem; letter-spacing: 2px; }
-        .avaliacao-card .texto-avaliacao { font-size: 0.95rem; color: #14212b; line-height: 1.6; margin-bottom: 0.8rem; font-style: italic; }
-        .avaliacao-card .cliente { display: flex; align-items: center; gap: 0.8rem; }
-        .avaliacao-card .cliente .avatar { width: 44px; height: 44px; border-radius: 50%; background: #dce6ef; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #003153; font-size: 1.1rem; }
-        .avaliacao-card .cliente .info .nome { font-weight: 700; color: #003153; font-size: 0.9rem; }
-        .avaliacao-card .cliente .info .data { font-size: 0.7rem; color: #6b8ba3; }
-        .footer-profissional { margin-top: 4rem; text-align: center; font-size: 0.85rem; color: #3e5f78; border-top: 1px solid #dce6ef; padding-top: 2.2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
-        .footer-profissional i { color: #b68b5c; }
-        .footer-profissional .marca-rodape { font-weight: 700; color: #003153; }
-        .whatsapp-fixo { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4); transition: 0.2s; z-index: 1000; text-decoration: none; }
+        body { font-family: 'Inter', sans-serif; background: #f4f7fc; color: #14212b; line-height: 1.5; padding: 1.5rem; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .checkout-container { max-width: 720px; width: 100%; margin: 0 auto; }
+        .logo { text-align: center; margin-bottom: 1.5rem; }
+        .logo h1 { font-size: 1.6rem; font-weight: 800; color: #003153; }
+        .logo h1 i { color: #b68b5c; margin-right: 8px; }
+        .logo p { color: #4d6f8a; font-size: 0.9rem; }
+        .card-checkout { background: #ffffff; border-radius: 40px; padding: 2rem 2.2rem; box-shadow: 0 20px 60px rgba(0, 20, 40, 0.08); border: 1px solid #eef4fa; }
+        .progress-bar { display: flex; justify-content: space-between; margin-bottom: 2rem; position: relative; }
+        .progress-bar::before { content: ''; position: absolute; top: 16px; left: 10%; right: 10%; height: 3px; background: #dce6ef; z-index: 0; }
+        .progress-step { display: flex; flex-direction: column; align-items: center; z-index: 1; flex: 1; }
+        .progress-step .circle { width: 34px; height: 34px; border-radius: 50%; background: #dce6ef; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; color: #fff; transition: 0.2s; }
+        .progress-step .circle.active { background: #003153; }
+        .progress-step .circle.done { background: #25D366; }
+        .progress-step .label { font-size: 0.6rem; font-weight: 600; color: #4d6f8a; margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .progress-step .label.active { color: #003153; }
+        .urgency { background: #fff5f0; border: 1px solid #fde0d0; border-radius: 16px; padding: 0.6rem 1.2rem; display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; font-size: 0.85rem; font-weight: 600; color: #b45a3a; flex-wrap: wrap; }
+        .urgency i { font-size: 1.1rem; }
+        .urgency .timer { background: #003153; color: white; padding: 0.2rem 0.8rem; border-radius: 40px; font-size: 0.8rem; }
+        .social-proof { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; color: #4d6f8a; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .social-proof i { color: #25D366; }
+        .social-proof .pulse { display: inline-block; width: 10px; height: 10px; background: #25D366; border-radius: 50%; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.8); opacity: 0.3; } 100% { transform: scale(1); opacity: 1; } }
+        .resumo-pedido { background: #f8fafc; border-radius: 20px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border: 1px solid #eef4fa; }
+        .resumo-pedido .linha { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.95rem; }
+        .resumo-pedido .total { border-top: 2px solid #dce6ef; padding-top: 0.6rem; margin-top: 0.4rem; font-weight: 700; font-size: 1.3rem; color: #003153; }
+        .resumo-pedido .total span:last-child { color: #25D366; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-weight: 600; color: #003153; margin-bottom: 0.3rem; font-size: 0.85rem; }
+        .form-group label i { color: #b68b5c; margin-right: 6px; }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem 1rem; border-radius: 16px; border: 1px solid #dce6ef; font-family: 'Inter', sans-serif; font-size: 0.95rem; background: #f8fafc; transition: 0.15s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #003153; background: #ffffff; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .metodos-pagamento { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; margin: 1rem 0 1.2rem; }
+        .metodos-pagamento button { padding: 0.7rem; border-radius: 16px; border: 2px solid #dce6ef; background: #f8fafc; cursor: pointer; font-weight: 600; color: #003153; transition: 0.15s; font-size: 0.8rem; }
+        .metodos-pagamento button:hover { border-color: #003153; background: #eef4fa; }
+        .metodos-pagamento button.selecionado { border-color: #003153; background: #003153; color: white; }
+        .campo-cartao { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.6rem; }
+        .campo-parcelas { margin-top: 0.6rem; }
+        .btn-finalizar { width: 100%; padding: 1rem; border-radius: 60px; border: none; background: #25D366; color: white; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.15s; margin-top: 1rem; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35); }
+        .btn-finalizar:hover { background: #20b85a; transform: translateY(-2px); }
+        .btn-finalizar:disabled { background: #a0c0d0; cursor: not-allowed; transform: none; box-shadow: none; }
+        .selos { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 1.5rem; font-size: 0.7rem; color: #4d6f8a; }
+        .selos i { color: #b68b5c; margin-right: 4px; font-size: 0.9rem; }
+        .checkout-hidden { display: none; }
+        .whatsapp-fixo { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4); transition: 0.2s; z-index: 1000; text-decoration: none; }
         .whatsapp-fixo:hover { transform: scale(1.08); }
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(6px); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
-        .modal-overlay.ativo { display: flex; }
-        .modal-checkout { background: #ffffff; border-radius: 48px; max-width: 560px; width: 100%; padding: 2.5rem; max-height: 90vh; overflow-y: auto; box-shadow: 0 30px 60px rgba(0,0,0,0.2); animation: modalEntrar 0.3s ease; }
-        @keyframes modalEntrar { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        .modal-checkout .fechar-modal { float: right; background: none; border: none; font-size: 1.5rem; color: #6b8ba3; cursor: pointer; }
-        .modal-checkout .fechar-modal:hover { color: #003153; transform: rotate(90deg); }
-        .modal-checkout h2 { font-size: 1.8rem; color: #003153; }
-        .modal-checkout .resumo-pedido { background: #f8fafc; border-radius: 20px; padding: 1.2rem; margin: 1rem 0 1.5rem; border: 1px solid #eef4fa; }
-        .modal-checkout .resumo-pedido .linha { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.95rem; }
-        .modal-checkout .resumo-pedido .total { border-top: 2px solid #dce6ef; padding-top: 0.6rem; margin-top: 0.4rem; font-weight: 700; font-size: 1.2rem; color: #003153; }
-        .modal-checkout .form-group { margin-bottom: 1.2rem; }
-        .modal-checkout .form-group label { display: block; font-weight: 600; color: #003153; margin-bottom: 0.3rem; font-size: 0.85rem; }
-        .modal-checkout .form-group input { width: 100%; padding: 0.8rem 1rem; border-radius: 16px; border: 1px solid #dce6ef; font-family: 'Inter', sans-serif; font-size: 0.95rem; background: #f8fafc; }
-        .modal-checkout .form-group input:focus { outline: none; border-color: #003153; }
-        .modal-checkout .metodos-pagamento { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin: 1rem 0; }
-        .modal-checkout .metodos-pagamento button { padding: 0.8rem; border-radius: 16px; border: 2px solid #dce6ef; background: #f8fafc; cursor: pointer; font-weight: 600; color: #003153; transition: 0.15s; font-size: 0.85rem; }
-        .modal-checkout .metodos-pagamento button:hover { border-color: #003153; background: #eef4fa; }
-        .modal-checkout .metodos-pagamento button.selecionado { border-color: #003153; background: #003153; color: white; }
-        .modal-checkout .btn-finalizar { width: 100%; padding: 1rem; border-radius: 60px; border: none; background: #25D366; color: white; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.15s; margin-top: 1rem; }
-        .modal-checkout .btn-finalizar:hover { background: #20b85a; transform: translateY(-2px); }
-        .modal-checkout .btn-pagar { width: 100%; padding: 1rem; border-radius: 60px; border: none; background: #003153; color: white; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.15s; margin-top: 0.5rem; }
-        .modal-checkout .btn-pagar:hover { background: #00487a; transform: translateY(-2px); }
-        @media (max-width: 650px) { body { padding: 1.2rem; } .hero { padding: 1.5rem; } .hero h1 { font-size: 2.4rem; } .header-tag { flex-direction: column; align-items: flex-start; gap: 0.8rem; } .card { padding: 1.5rem; } .modal-checkout { padding: 1.5rem; } .metodos-pagamento { grid-template-columns: 1fr; } .whatsapp-fixo { width: 60px; height: 60px; font-size: 1.8rem; bottom: 20px; right: 20px; } }
+        @media (max-width: 600px) { body { padding: 1rem; } .card-checkout { padding: 1.2rem; } .form-row { grid-template-columns: 1fr; } .metodos-pagamento { grid-template-columns: 1fr; } .campo-cartao { grid-template-columns: 1fr 1fr; } .progress-step .label { font-size: 0.5rem; } .logo h1 { font-size: 1.2rem; } }
+        .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 8px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #003153; color: white; padding: 0.8rem 2rem; border-radius: 60px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 8px 24px rgba(0,0,0,0.2); z-index: 9999; opacity: 0; transition: 0.3s; pointer-events: none; }
+        .toast.show { opacity: 1; bottom: 120px; }
     </style>
 </head>
 <body>
-<div class="container">
 
-    <!-- HEADER -->
-    <div class="header-tag">
-        <div class="marca"><i class="fas fa-gem"></i> ORGULHO & HERANÇA</div>
-        <div class="frase-emoção"><i class="fas fa-quote-left"></i> MEU PAI, MEU ORGULHO</div>
+<div class="checkout-container">
+    <!-- LOGO -->
+    <div class="logo">
+        <h1><i class="fas fa-gem"></i> ORGULHO & HERANÇA</h1>
+        <p>Presentes personalizados · Dia dos Pais</p>
     </div>
 
-    <!-- HERO -->
-    <div class="hero">
-        <div>
-            <h1>PRESENTE <span>PERSONALIZADO</span><br> PARA O DIA DOS PAIS</h1>
-            <div class="subtitulo"><i class="fas fa-camera"></i> CAMISETAS · MOLETONS · CANECAS · COM FOTO</div>
-            <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20um%20presente%20personalizado%20para%20o%20Dia%20dos%20Pais." target="_blank" class="cta-principal">COMPRAR PELO WHATSAPP</a>
-        </div>
-        <div style="margin-top: 0.8rem; font-weight: 500; color: #003153; background: rgba(255,255,255,0.4); padding: 0.4rem 1.8rem; border-radius: 60px; border: 1px solid rgba(255,255,255,0.5);">
-            <i class="fas fa-heart" style="color: #b68b5c;"></i> EDIÇÃO EXCLUSIVA
-        </div>
-    </div>
-
-    <!-- PRODUTOS -->
-    <div class="grid-produtos">
-
-        <div class="card">
-            <div class="badge-destaque">MAIS VENDIDO</div>
-            <div class="imagem-produto"><i class="fas fa-tshirt"></i></div>
-            <h3>CAMISETA</h3>
-            <div class="descricao-curta">ALGODÃO PREMIUM · 100%</div>
-            <div class="tamanhos">
-                <button class="ativo" onclick="selecionarTamanho('camiseta', this, 'P')">P</button>
-                <button onclick="selecionarTamanho('camiseta', this, 'M')">M</button>
-                <button onclick="selecionarTamanho('camiseta', this, 'G')">G</button>
-                <button onclick="selecionarTamanho('camiseta', this, 'GG')">GG</button>
-                <button onclick="selecionarTamanho('camiseta', this, 'XG')">XG</button>
-            </div>
-            <div class="personalizacao"><i class="fas fa-image"></i> PERSONALIZE COM FOTO</div>
-            <div class="preco" id="preco-camiseta">R$ 89,90 <small>ATÉ 3 FOTOS</small></div>
-            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <button onclick="abrirCheckout('Camiseta Premium', 89.90, 'P', 'camiseta')" class="btn-comprar">COMPRAR</button>
-                <span class="selo-orgulho"><i class="fas fa-star"></i> EDIÇÃO ESPECIAL</span>
-            </div>
+    <!-- CARD CHECKOUT -->
+    <div class="card-checkout">
+        <!-- PROGRESSO -->
+        <div class="progress-bar">
+            <div class="progress-step"><div class="circle active">1</div><span class="label active">Produto</span></div>
+            <div class="progress-step"><div class="circle">2</div><span class="label">Dados</span></div>
+            <div class="progress-step"><div class="circle">3</div><span class="label">Pagamento</span></div>
+            <div class="progress-step"><div class="circle">4</div><span class="label">Concluído</span></div>
         </div>
 
-        <div class="card">
-            <div class="badge-destaque">PREMIUM</div>
-            <div class="imagem-produto"><i class="fas fa-user"></i></div>
-            <h3>MOLETOM CANGURU</h3>
-            <div class="descricao-curta">PREMIUM · TECIDO MACIO</div>
-            <div class="tamanhos">
-                <button class="ativo" onclick="selecionarTamanho('moletom', this, 'P')">P</button>
-                <button onclick="selecionarTamanho('moletom', this, 'M')">M</button>
-                <button onclick="selecionarTamanho('moletom', this, 'G')">G</button>
-                <button onclick="selecionarTamanho('moletom', this, 'GG')">GG</button>
-                <button onclick="selecionarTamanho('moletom', this, 'XG')">XG</button>
-                <button onclick="selecionarTamanho('moletom', this, 'XXG')">XXG</button>
-            </div>
-            <div class="personalizacao"><i class="fas fa-image"></i> FOTO + NOME BORDADO</div>
-            <div class="preco" id="preco-moletom">R$ 169,90 <small>PERSONALIZAÇÃO</small></div>
-            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <button onclick="abrirCheckout('Moletom Canguru Premium', 169.90, 'P', 'moletom')" class="btn-comprar">COMPRAR</button>
-                <span class="selo-orgulho"><i class="fas fa-crown"></i> EDIÇÃO OURO</span>
-            </div>
+        <!-- URGÊNCIA -->
+        <div class="urgency">
+            <i class="fas fa-clock"></i>
+            <span><strong>Oferta exclusiva</strong> · termina em:</span>
+            <span class="timer" id="timer">10:00</span>
+            <span style="margin-left: auto;"><i class="fas fa-box"></i> <span id="estoque-restante">7</span> unidades restantes</span>
         </div>
 
-        <div class="card">
-            <div class="badge-destaque">POPULAR</div>
-            <div class="imagem-produto"><i class="fas fa-mug-saucer"></i></div>
-            <h3>CANECA</h3>
-            <div class="descricao-curta">PORCELANA · QUALIDADE PREMIUM</div>
-            <div class="tamanhos">
-                <button class="ativo" onclick="selecionarTamanhoCaneca(this, '330ml', 49.90)">330ML - R$ 49,90</button>
-                <button onclick="selecionarTamanhoCaneca(this, '450ml', 59.90)">450ML - R$ 59,90</button>
-                <button onclick="selecionarTamanhoCaneca(this, '550ml', 69.90)">550ML - R$ 69,90</button>
-            </div>
-            <div class="personalizacao"><i class="fas fa-image"></i> FOTO 360°</div>
-            <div class="preco" id="preco-caneca">R$ 49,90 <small>FOTO DUPLA-FACE</small></div>
-            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <button onclick="abrirCheckout('Caneca Porcelana', 49.90, '330ml', 'caneca')" class="btn-comprar">COMPRAR</button>
-                <span class="selo-orgulho"><i class="fas fa-rotate"></i> 360°</span>
-            </div>
+        <!-- PROVA SOCIAL -->
+        <div class="social-proof">
+            <span class="pulse"></span>
+            <span><strong id="pessoas-ao-vivo">12</strong> pessoas estão vendo este produto agora</span>
+            <span style="margin-left: auto;"><i class="fas fa-shopping-bag"></i> <span id="vendas-hoje">34</span> vendidos hoje</span>
         </div>
 
-        <div class="card">
-            <div class="badge-destaque">TERMO</div>
-            <div class="imagem-produto"><i class="fas fa-mug-hot"></i></div>
-            <h3>CANECA TERMO</h3>
-            <div class="descricao-curta">AÇO INOX · ISOLAMENTO TÉRMICO</div>
-            <div class="tamanhos">
-                <button class="ativo" onclick="selecionarTamanhoCaneca2(this, '350ml', 69.90)">350ML - R$ 69,90</button>
-                <button onclick="selecionarTamanhoCaneca2(this, '500ml', 79.90)">500ML - R$ 79,90</button>
-                <button onclick="selecionarTamanhoCaneca2(this, '700ml', 89.90)">700ML - R$ 89,90</button>
-            </div>
-            <div class="personalizacao"><i class="fas fa-image"></i> FOTO + TEXTO</div>
-            <div class="preco" id="preco-caneca2">R$ 69,90 <small>PERSONALIZAÇÃO</small></div>
-            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <button onclick="abrirCheckout('Caneca Termo', 69.90, '350ml', 'caneca2')" class="btn-comprar">COMPRAR</button>
-                <span class="selo-orgulho"><i class="fas fa-font"></i> TEXTO EXCLUSIVO</span>
-            </div>
+        <!-- RESUMO DO PEDIDO -->
+        <div class="resumo-pedido" id="resumoPedido">
+            <div class="linha"><span>Produto:</span> <span id="resumo-produto">Camiseta Premium</span></div>
+            <div class="linha"><span>Tamanho:</span> <span id="resumo-tamanho">P</span></div>
+            <div class="linha"><span>Quantidade:</span> <span>1</span></div>
+            <div class="linha"><span>Frete:</span> <span>R$ 0,00</span></div>
+            <div class="linha total"><span>TOTAL:</span> <span id="resumo-total">R$ 89,90</span></div>
         </div>
-    </div>
 
-    <!-- FRASES -->
-    <div class="frases-emocionais">
-        <span><i class="fas fa-heart"></i> MEU PAI, MEU ORGULHO</span>
-        <span><i class="fas fa-star"></i> HOMEM DE VALOR</span>
-        <span><i class="fas fa-gem"></i> HERANÇA DE AMOR</span>
-        <span><i class="fas fa-shield"></i> MEU GUARDIÃO</span>
-        <span><i class="fas fa-hands"></i> EXEMPLO DE VIDA</span>
-        <span><i class="fas fa-crown"></i> MEU REI</span>
-        <span><i class="fas fa-anchor"></i> MEU PORTO SEGURO</span>
-    </div>
-
-    <!-- AVALIAÇÕES -->
-    <div class="avaliacoes-section">
-        <h2><i class="fas fa-star" style="color: #f5b342;"></i> O QUE NOSSOS CLIENTES DIZEM</h2>
-        <p class="sub-avaliacoes"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> 4.9 de 5 · Mais de 280 avaliações</p>
-        <div class="grid-avaliacoes">
-            <div class="avaliacao-card">
-                <div class="foto-produto-avaliacao"><i class="fas fa-tshirt"></i></div>
-                <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="texto-avaliacao">"Meu pai amou a camiseta! A qualidade é incrível e a estampa ficou perfeita. Recomendo demais!"</p>
-                <div class="cliente">
-                    <div class="avatar" style="background: #d4e2f0;">C</div>
-                    <div class="info"><span class="nome">Carla Menezes</span><span class="data">15 de maio, 2026</span></div>
+        <!-- FORMULÁRIO -->
+        <div id="formDados">
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Nome completo</label>
+                <input type="text" id="nome-cliente" placeholder="Digite seu nome completo" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> E-mail</label>
+                    <input type="email" id="email-cliente" placeholder="voce@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fab fa-whatsapp"></i> Telefone (WhatsApp)</label>
+                    <input type="tel" id="telefone-cliente" placeholder="(11) 99999-9999" required>
                 </div>
             </div>
-            <div class="avaliacao-card">
-                <div class="foto-produto-avaliacao"><i class="fas fa-user"></i></div>
-                <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="texto-avaliacao">"O moletom canguru é super macio e o bordado com o nome ficou lindo. Meu pai adorou!"</p>
-                <div class="cliente">
-                    <div class="avatar" style="background: #f5e6d3;">R</div>
-                    <div class="info"><span class="nome">Rodrigo Almeida</span><span class="data">12 de maio, 2026</span></div>
+            <div class="form-group">
+                <label><i class="fas fa-map-pin"></i> CEP</label>
+                <input type="text" id="cep-cliente" placeholder="00000-000" maxlength="9">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-road"></i> Endereço</label>
+                    <input type="text" id="endereco-cliente" placeholder="Rua, Av, etc.">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-hashtag"></i> Número</label>
+                    <input type="text" id="numero-cliente" placeholder="123">
                 </div>
             </div>
-            <div class="avaliacao-card">
-                <div class="foto-produto-avaliacao"><i class="fas fa-mug-saucer"></i></div>
-                <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="texto-avaliacao">"Caneca linda! A foto da família ficou perfeita. Meu pai emocionou com o presente."</p>
-                <div class="cliente">
-                    <div class="avatar" style="background: #d9e8e0;">F</div>
-                    <div class="info"><span class="nome">Fernanda Lima</span><span class="data">10 de maio, 2026</span></div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-building"></i> Complemento</label>
+                    <input type="text" id="complemento-cliente" placeholder="Apto, Bloco, etc.">
                 </div>
+                <div class="form-group">
+                    <label><i class="fas fa-city"></i> Bairro</label>
+                    <input type="text" id="bairro-cliente" placeholder="Bairro">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label><i class="fas fa-city"></i> Cidade</label>
+                    <input type="text" id="cidade-cliente" placeholder="Cidade">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-map"></i> UF</label>
+                    <input type="text" id="uf-cliente" placeholder="SP" maxlength="2">
+                </div>
+            </div>
+
+            <!-- MÉTODOS DE PAGAMENTO -->
+            <label style="font-weight: 600; color: #003153; display: block; margin: 1rem 0 0.3rem;"><i class="fas fa-credit-card"></i> Método de pagamento</label>
+            <div class="metodos-pagamento">
+                <button class="selecionado" data-metodo="cartao" onclick="selecionarMetodo('cartao', this)"><i class="fas fa-credit-card"></i> Cartão</button>
+                <button data-metodo="pix" onclick="selecionarMetodo('pix', this)"><i class="fas fa-qrcode"></i> PIX</button>
+                <button data-metodo="boleto" onclick="selecionarMetodo('boleto', this)"><i class="fas fa-barcode"></i> Boleto</button>
+            </div>
+
+            <!-- CAMPOS CARTÃO (visível apenas se cartão selecionado) -->
+            <div id="camposCartao">
+                <div class="form-group">
+                    <label><i class="fas fa-credit-card"></i> Número do cartão</label>
+                    <input type="text" id="cartao-numero" placeholder="0000 0000 0000 0000" maxlength="19">
+                </div>
+                <div class="campo-cartao">
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Validade</label>
+                        <input type="text" id="cartao-validade" placeholder="MM/AA" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> CVV</label>
+                        <input type="text" id="cartao-cvv" placeholder="123" maxlength="4">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Nome no cartão</label>
+                        <input type="text" id="cartao-nome" placeholder="Como está no cartão">
+                    </div>
+                </div>
+                <div class="form-group campo-parcelas">
+                    <label><i class="fas fa-arrow-right"></i> Número de parcelas</label>
+                    <select id="cartao-parcelas">
+                        <option value="1">1x sem juros</option>
+                        <option value="2">2x sem juros</option>
+                        <option value="3">3x sem juros</option>
+                        <option value="4">4x sem juros</option>
+                        <option value="5">5x sem juros</option>
+                        <option value="6">6x sem juros</option>
+                        <option value="7">7x sem juros</option>
+                        <option value="8">8x sem juros</option>
+                        <option value="9">9x sem juros</option>
+                        <option value="10">10x sem juros</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- MENSAGEM PIX (visível apenas se PIX selecionado) -->
+            <div id="msgPix" style="display: none; background: #eef6fb; border-radius: 16px; padding: 1rem; text-align: center; margin: 1rem 0;">
+                <i class="fas fa-qrcode" style="font-size: 3rem; color: #003153;"></i>
+                <p style="font-weight: 600; color: #003153; margin-top: 0.5rem;">Ao finalizar, você receberá o QR Code para pagamento via PIX.</p>
+            </div>
+
+            <!-- MENSAGEM BOLETO (visível apenas se BOLETO selecionado) -->
+            <div id="msgBoleto" style="display: none; background: #eef6fb; border-radius: 16px; padding: 1rem; text-align: center; margin: 1rem 0;">
+                <i class="fas fa-barcode" style="font-size: 3rem; color: #003153;"></i>
+                <p style="font-weight: 600; color: #003153; margin-top: 0.5rem;">Ao finalizar, você receberá o boleto para pagamento.</p>
+            </div>
+
+            <!-- BOTÃO FINALIZAR -->
+            <button class="btn-finalizar" id="btnFinalizar" onclick="finalizarCompra()">
+                <i class="fas fa-lock"></i> FINALIZAR COMPRA AGORA
+            </button>
+
+            <!-- SELOS -->
+            <div class="selos">
+                <span><i class="fas fa-lock"></i> Compra segura</span>
+                <span><i class="fas fa-undo-alt"></i> 7 dias de garantia</span>
+                <span><i class="fas fa-shield-alt"></i> Dados criptografados</span>
+                <span><i class="fas fa-star"></i> 4.9/5 · 280+ avaliações</span>
             </div>
         </div>
+
+        <!-- TELA DE PROCESSAMENTO (escondida) -->
+        <div id="telaProcessamento" style="display: none; text-align: center; padding: 2rem 0;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; border: 6px solid #dce6ef; border-top-color: #003153; animation: spin 0.8s linear infinite; margin: 0 auto 1.5rem;"></div>
+            <h3 style="color: #003153;">Processando seu pedido...</h3>
+            <p style="color: #4d6f8a;">Aguarde um momento, não feche esta página.</p>
+        </div>
+
+        <!-- TELA DE SUCESSO (escondida) -->
+        <div id="telaSucesso" style="display: none; text-align: center; padding: 2rem 0;">
+            <i class="fas fa-check-circle" style="font-size: 4rem; color: #25D366;"></i>
+            <h3 style="color: #003153; margin-top: 1rem;">Pedido realizado com sucesso! 🎉</h3>
+            <p style="color: #4d6f8a;">Você receberá a confirmação por e-mail e WhatsApp.</p>
+            <p style="color: #4d6f8a; font-size: 0.9rem; margin-top: 0.5rem;">Número do pedido: <strong id="numeroPedido">#DDP-2026-001</strong></p>
+            <button onclick="window.location.href='https://wa.me/5511934089837?text=Olá!%20Acabei%20de%20finalizar%20um%20pedido%20e%20gostaria%20de%20acompanhar.'" style="margin-top: 1.5rem; padding: 0.8rem 2.5rem; border-radius: 60px; background: #25D366; color: white; border: none; font-weight: 700; cursor: pointer; font-size: 1rem;">Falar com suporte</button>
+        </div>
     </div>
+</div>
 
-    <!-- FOOTER -->
-    <div class="footer-profissional">
-        <span><i class="fas fa-gift"></i> DIA DOS PAIS · EDIÇÃO PERSONALIZADA</span>
-        <span><i class="fas fa-camera"></i> CAMISETAS · CANECAS · COM FOTO</span>
-        <span class="marca-rodape"><i class="fas fa-gem"></i> ORGULHO & HERANÇA</span>
-    </div>
+<!-- WHATSAPP FIXO -->
+<a href="https://wa.me/5511934089837?text=Olá!%20Tenho%20dúvida%20sobre%20os%20presentes%20personalizados." target="_blank" class="whatsapp-fixo">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
-    <div style="margin-top: 1.5rem; font-size: 0.75rem; color: #5a7a93; text-align: center; border-top: 1px solid #e4ecf4; padding-top: 1.2rem;">
-        <i class="fas fa-check-circle" style="color: #b68b5c;"></i> TODOS OS PRODUTOS SÃO PERSONALIZÁVEIS COM FOTO · TAMANHOS VARIADOS
-        <br><br>
-        <i class="fas fa-heart" style="color: #b68b5c;"></i> "O melhor presente é aquele que vem do coração" <i class="fas fa-heart" style="color: #b68b5c;"></i>
-    </div>
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Pedido finalizado com sucesso!</div>
 
-    <!-- WHATSAPP FIXO -->
-    <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20um%20presente%20personalizado%20para%20o%20Dia%20dos%20Pais." target="_blank" class="whatsapp-fixo">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<script>
+    // === CONFIGURAÇÕES INICIAIS ===
+    // Substitua com os dados do seu gateway quando escolher
+    const GATEWAY_CONFIG = {
+        tipo: 'pagar.me', // pagar.me / rede / pagseguro / cielo / mercado_pago / whatsapp
+        apiKey: 'YOUR_API_KEY_HERE',
+        publicKey: 'YOUR_PUBLIC_KEY_HERE',
+        clientId: 'YOUR_CLIENT_ID',
+        clientSecret: 'YOUR_CLIENT_SECRET',
+        // Para modo de teste (sandbox)
+        sandbox: true
+    };
 
-    <!-- MODAL CHECKOUT -->
-    <div class="modal-overlay" id="modalCheckout">
-        <div class="modal-checkout">
-            <button class="fechar-modal" onclick="fecharCheckout()">✕</button>
-            <h2><i class="fas fa-shopping-cart" style="color: #b68b5c;"></i> FINALIZAR PEDIDO</h2>
-            <div class="resumo-pedido" id="resumoPedido">
-                <div class="linha"><span>Produto:</span> <span id="resumo-produto">-</span></div>
-                <div class="linha"><span>Tamanho:</span> <span id="resumo-tamanho">-</span></div>
-                <div class="linha"><span>Preço:</span> <span id="resumo-preco">-</span></div>
-                <div class="linha total"><span>Total:</span> <span id="resumo-total">-</span></div>
-            </div>
-            <div class="form-group">
-                <label>SEU NOME COMPLETO</label>
-                <input type="text" id="nome-cliente" placeholder="Digite seu nome completo">
-            </div>
-            <div class="form-group">
-                <label>SEU E-MAIL</label>
-                <input type="email" id="email-cliente" placeholder="voce@email.com">
-            </div>
-            <div class="form-group">
-                <label>SEU TELEFONE (COM WHATSAPP)</label>
-                <input type="tel" id="telefone-cliente" placeholder="(11) 99999-9999">
-            </div>
+    // === DADOS DO PRODUTO (vindo da página anterior) ===
+    // Você pode setar isso via URL ou via variável global
+    let produtoAtual = {
+        nome: 'Camiseta Premium',
+        preco: 89.90,
+        tamanho: 'P',
+        sku: 'CAM-PRE-P'
+    };
 
-            <label style="font-weight: 600; color
+    // === VARIÁVEIS DE ESTADO ===
+    let metodoSelecionado = 'cartao';
+    let processando = false;
+
+    // === TIMER DE URGÊNCIA ===
+    let timerSegundos = 600; // 10 minutos
+    const timerEl = document.getElementById('timer');
+    const estoqueEl = document.getElementById('estoque-restante');
+
+    function atualizarTimer() {
+        const min = Math.floor(timerSegundos / 60);
+        const seg = timerSegundos % 60;
+        timerEl.textContent = `${String(min).padStart(2, '0')}:${String(seg).padStart(2, '0')}`;
+        if (timerSegundos > 0) {
+            timerSegundos--;
+            setTimeout(atualizarTimer, 1000);
+        } else {
+            timerEl.textContent = '00:00';
+            document.getElementById('btnFinalizar').disabled = true;
+            document.getElementById('btnFinalizar').textContent = '⛔ Oferta encerrada';
+            document.getElementById('btnFinalizar').style.background = '#a0c0d0';
+        }
+    }
+    atualizarTimer();
+
+    // Simula consumo de estoque
+    let estoque = 7;
+    function consumirEstoque() {
+        if (estoque > 0) {
+            estoque--;
+            estoqueEl.textContent = estoque;
+        }
+    }
+
+    // === PROVA SOCIAL SIMULADA ===
+    function atualizarProvaSocial() {
+        const pessoas = Math.floor(Math.random() * 8) + 8; // 8-16
+        document.getElementById('pessoas-ao-vivo').textContent = pessoas;
+        const vendas = Math.floor(Math.random() * 5) + 32;
+        document.getElementById('vendas-hoje').textContent = vendas;
+    }
+    setInterval(atualizarProvaSocial, 8000);
+    atualizarProvaSocial();
+
+    // === MÉTODOS DE PAGAMENTO ===
+    function selecionarMetodo(metodo, btn) {
+        document.querySelectorAll('.metodos-pagamento button').forEach(b => b.classList.remove('selecionado'));
+        btn.classList.add('selecionado');
+        metodoSelecionado = metodo;
+
+        document.getElementById('camposCartao').style.display = metodo === 'cartao' ? 'block' : 'none';
+        document.getElementById('msgPix').style.display = metodo === 'pix' ? 'block' : 'none';
+        document.getElementById('msgBoleto').style.display = metodo === 'boleto' ? 'block' : 'none';
+    }
+
+    // === FUNÇÃO PARA ATUALIZAR RESUMO (chamada da página anterior) ===
+    function atualizarResumo(nome, preco, tamanho) {
+        if (nome) produtoAtual.nome = nome;
+        if (preco) produtoAtual.preco = preco;
+        if (tamanho) produtoAtual.tamanho = tamanho;
+        document.getElementById('resumo-produto').textContent = produtoAtual.nome;
+        document.getElementById('resumo-tamanho').textContent = produtoAtual.tamanho;
+        document.getElementById('resumo-total').textContent = `R$ ${produtoAtual.preco.toFixed(2).replace('.', ',')}`;
+    }
+
+    // === FINALIZAR COMPRA ===
+    function finalizarCompra() {
+        if (processando) return;
+        const btn = document.getElementById('btnFinalizar');
+
+        // VALIDAÇÃO BÁSICA
+        const nome = document.getElementById('nome-cliente').value.trim();
+        const email = document.getElementById('email-cliente').value.trim();
+        const telefone = document.getElementById('telefone-cliente').value.trim();
+
+        if (!nome || !email || !telefone) {
+            mostrarToast('⚠️ Preencha seu nome, e-mail e telefone.');
+            return;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+            mostrarToast('⚠️ Digite um e-mail válido.');
+            return;
+        }
+
+        if (telefone.replace(/\D/g, '').length < 10) {
+            mostrarToast('⚠️ Digite um telefone válido com DDD.');
+            return;
+        }
+
+        if (metodoSelecionado === 'cartao') {
+            const num = document.getElementById('cartao-numero').value.replace(/\D/g, '');
+            const validade = document.getElementById('cartao-validade').value;
+            const cvv = document.getElementById('cartao-cvv').value;
+
+            if (num.length < 15) {
+                mostrarToast('⚠️ Digite o número do cartão completo.');
+                return;
+            }
+            if (!validade.includes('/') || validade.length < 5) {
+                mostrarToast('⚠️ Digite a validade no formato MM/AA.');
+                return;
+            }
+            if (cvv.length < 3) {
+                mostrarToast('⚠️ Digite o CVV do cartão.');
+                return;
+            }
+        }
+
+        // CONSUMIR ESTOQUE
+        consumirEstoque();
+
+        // INICIAR PROCESSAMENTO
+        processando = true;
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner"></span> Processando...';
+
+        // === INTEGRAÇÃO COM GATEWAY ===
+        // AQUI VOCÊ SUBSTITUI PELA CHAMADA REAL DA API DO GATEWAY ESCOLHIDO
+        // Exemplo com Pagar.me:
+        // const payload = {
+        //     amount: produtoAtual.preco * 100,
+        //     payment_method: metodoSelecionado,
+        //     card_number: num,
+        //     card_expiration: validade,
+        //     card_cvv: cvv,
+        //     customer: { name: nome, email, phone: telefone }
+        // };
+        // fetch('https://api.pagar.me/...', { method: 'POST', ... })
+
+        // SIMULAÇÃO (REMOVER DEPOIS QUE INTEGRAR)
+        setTimeout(() => {
+            // Esconde formulário, mostra processamento
+            document.getElementById('formDados').style.display = 'none';
+            document.getElementById('telaProcessamento').style.display = 'block';
+
+            setTimeout(() => {
+                // Sucesso
+                document.getElementById('telaProcessamento').style.display = 'none';
+                document.getElementById('telaSucesso').style.display = 'block';
+                document.getElementById('numeroPedido').textContent = `#DDP-${String(Math.floor(1000 + Math.random() * 9000))}`;
+                mostrarToast('✅ Pedido finalizado com sucesso!');
+                btn.style.display = 'none';
+            }, 2000);
+        }, 1500);
+    }
+
+    // === TOAST (notificação) ===
+    function mostrarToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    // === MÁSCARAS DE CAMPOS ===
+    document.getElementById('cartao-numero')?.addEventListener('input', function(e) {
+        let val = this.value.replace(/\D/g, '');
+        val = val.replace(/(\d{4})(?=\d)/g, '$1 ');
+        this.value = val.slice(0, 19);
+    });
+
+    document.getElementById('cartao-validade')?.addEventListener('input', function(e) {
+        let val = this.value.replace(/\D/g, '');
+        if (val.length >= 2) {
+            val = val.slice(0, 2) + '/' + val.slice(2);
+        }
+        this.value = val.slice(0, 5);
+    });
+
+    document.getElementById('cartao-cvv')?.addEventListener('input', function(e) {
+        this.value = this.value.replace(/\D/g, '').slice(0, 4);
+    });
+
+    document.getElementById('telefone-cliente')?.addEventListener('input', function(e) {
+        let val = this.value.replace(/\D/g, '');
+        if (val.length >= 2) {
+            val = '(' + val.slice(0, 2) + ') ' + val.slice(2);
+        }
+        if (val.length >= 10) {
+            val = val.slice(0, 10) + '-' + val.slice(10, 14);
+        }
+        this.value = val.slice(0, 16);
+    });
+
+    document.getElementById('cep-cliente')?.addEventListener('input', function(e) {
+        let val = this.value.replace(/\D/g, '');
+        if (val.length >= 5) {
+            val = val.slice(0, 5) + '-' + val.slice(5);
+        }
+        this.value = val.slice(0, 9);
+    });
+
+    // === FUNÇÃO PARA RECEBER DADOS DA PÁGINA ANTERIOR (via URL ou variável global) ===
+    // Exemplo: se chamar checkout.html?produto=Camiseta&preco=89.90&tamanho=P
+    (function carregarDadosDaURL() {
+        const params = new URLSearchParams(window.location.search);
+        const nome = params.get('produto');
+        const preco = parse
