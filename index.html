@@ -1,804 +1,1051 @@
+Perfeito! Agora vou criar um **checkout ultraprofissional com tema Super-Homem**, mantendo todas as técnicas de conversão que você pediu. Vou usar uma paleta de cores **azul, vermelho e amarelo** (inspirada no Superman) com um design moderno e elegante.
+
+---
+
+## 🦸 Tema: **"MEU PAI HERÓI"** com identidade visual Superman
+
+### Cores que vou usar:
+- **Azul profundo** (`#0a1628`) - fundo e elementos principais
+- **Vermelho** (`#e62429`) - botões de ação e destaques
+- **Amarelo** (`#f5c842`) - selos e badges
+- **Branco** (`#ffffff`) - textos e cards
+
+---
+
+Aqui está o código completo e pronto para usar:
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-    <title>Herói sem Capa · Presentes para Pais</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Premium · Meu Pai Herói</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ============ RESET & BASE ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #f0f4fc;
-            color: #14212b;
-            line-height: 1.5;
-            padding: 1.5rem;
+            background: #0a1628;
+            color: #ffffff;
             min-height: 100vh;
-        }
-        .container { max-width: 1280px; margin: 0 auto; }
-
-        /* === CORES SUPERMAN === */
-        :root {
-            --azul-super: #1a2b7a;
-            --azul-claro: #3a5bd9;
-            --vermelho: #e62429;
-            --dourado: #f5c518;
-            --dourado-escuro: #d4a800;
-            --branco: #ffffff;
-            --fundo: #f0f4fc;
-        }
-
-        /* HEADER */
-        .header-tag {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--dourado);
-            padding-bottom: 1.2rem;
-            margin-bottom: 2.5rem;
-        }
-        .marca {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--azul-super);
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-        .marca .escudo {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            background: var(--azul-super);
-            border: 3px solid var(--dourado);
-            border-radius: 8px 8px 8px 0;
-            transform: rotate(-5deg);
-            color: var(--dourado);
-            font-weight: 900;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(26, 43, 122, 0.3);
-            position: relative;
-        }
-        .marca .escudo span {
-            transform: rotate(5deg);
-            letter-spacing: 2px;
-        }
-        .marca .escudo::after {
-            content: '';
-            position: absolute;
-            top: -6px;
-            left: -6px;
-            right: -6px;
-            bottom: -6px;
-            border: 2px solid var(--dourado);
-            border-radius: 10px 10px 10px 0;
-            opacity: 0.4;
-        }
-        .marca .heroi-texto {
-            color: var(--azul-super);
-        }
-        .marca .heroi-texto span {
-            color: var(--vermelho);
-        }
-        .frase-emoção {
-            background: var(--azul-super);
-            padding: 0.5rem 2rem;
-            border-radius: 60px;
-            font-weight: 700;
-            color: var(--dourado);
-            font-size: 0.95rem;
-            border: 2px solid var(--dourado);
-            box-shadow: 0 2px 8px rgba(26, 43, 122, 0.2);
-        }
-        .frase-emoção i { color: var(--dourado); margin-right: 10px; }
-
-        /* HERO */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3.5rem;
-            background: linear-gradient(145deg, #ffffff, #e8edf9);
-            padding: 2.5rem 3rem;
-            border-radius: 48px;
-            border: 2px solid var(--dourado);
-            box-shadow: 0 8px 32px rgba(26, 43, 122, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(230, 36, 41, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -60px;
-            left: -60px;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(245, 197, 24, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero h1 {
-            font-size: 3.4rem;
-            font-weight: 900;
-            color: var(--azul-super);
-            line-height: 1.1;
-            position: relative;
-            z-index: 1;
-        }
-        .hero h1 .destaque-vermelho {
-            color: var(--vermelho);
-        }
-        .hero h1 .destaque-dourado {
-            color: var(--dourado-escuro);
-        }
-        .hero .subtitulo {
-            font-size: 1.2rem;
-            color: var(--azul-super);
-            margin-top: 0.5rem;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 0.4rem 2rem;
-            border-radius: 60px;
-            display: inline-block;
-            font-weight: 600;
-            border: 1px solid var(--dourado);
-            position: relative;
-            z-index: 1;
-        }
-        .hero .subtitulo i { color: var(--dourado-escuro); margin-right: 10px; }
-        .hero .cta-principal {
-            background: var(--vermelho);
-            color: white;
-            padding: 1rem 3rem;
-            border-radius: 60px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-            margin-top: 0.8rem;
-            transition: 0.2s;
-            border: 2px solid var(--dourado);
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 6px 20px rgba(230, 36, 41, 0.35);
-        }
-        .hero .cta-principal:hover {
-            background: #c41e24;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 28px rgba(230, 36, 41, 0.45);
-        }
-        .hero .selo-heroi {
-            background: var(--azul-super);
-            color: var(--dourado);
-            padding: 0.5rem 2rem;
-            border-radius: 60px;
-            font-weight: 700;
-            border: 2px solid var(--dourado);
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-        .hero .selo-heroi i { color: var(--dourado); margin-right: 8px; }
-
-        /* === PRODUTOS === */
-        .grid-produtos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin: 2.5rem 0;
-        }
-        .card {
-            background: #ffffff;
-            border-radius: 40px;
-            padding: 1.8rem;
-            box-shadow: 0 8px 24px rgba(26, 43, 122, 0.06);
-            border: 2px solid #e0e6f2;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: 0.25s;
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--dourado);
-            box-shadow: 0 20px 48px rgba(26, 43, 122, 0.12);
-        }
-        .card .imagem-produto {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(145deg, #e8edf9, #d5dff0);
-            border-radius: 24px;
-            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: var(--azul-super);
-        }
-        .card h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--azul-super);
-        }
-        .card .descricao-curta {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--azul-super);
-            background: #eef2fa;
-            display: inline-block;
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
-            margin: 0.5rem 0 1rem;
-        }
-        .card .tamanhos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin: 0.6rem 0 1rem;
-        }
-        .card .tamanhos button {
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
-            border: 2px solid #d5dff0;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.75rem;
-            background: #f4f7fc;
-            color: var(--azul-super);
-            transition: 0.15s;
-        }
-        .card .tamanhos button:hover {
-            border-color: var(--azul-super);
-            background: #e8edf9;
-        }
-        .card .tamanhos button.ativo {
-            background: var(--azul-super);
-            color: white;
-            border-color: var(--azul-super);
-        }
-        .card .personalizacao {
-            background: #eef2fa;
-            border-radius: 60px;
-            padding: 0.6rem 1.4rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--azul-super);
-            margin: 0.4rem 0 1rem;
-            width: fit-content;
-            border: 1px solid var(--dourado);
-        }
-        .card .personalizacao i { color: var(--dourado-escuro); }
-        .preco {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--azul-super);
-            margin-top: auto;
-            padding-top: 0.8rem;
-            border-top: 2px solid #e8edf9;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .preco small {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #5a7a9a;
-        }
-        .btn-comprar {
-            background: var(--vermelho);
-            border: none;
-            color: white;
-            font-weight: 800;
-            font-size: 0.9rem;
-            padding: 0.7rem 2rem;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 4px 14px rgba(230, 36, 41, 0.3);
-            border: 2px solid var(--dourado);
-        }
-        .btn-comprar:hover {
-            background: #c41e24;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(230, 36, 41, 0.4);
-        }
-        .badge-destaque {
-            position: absolute;
-            top: 1rem;
-            right: 1.2rem;
-            background: var(--azul-super);
-            color: var(--dourado);
-            padding: 0.2rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.6rem;
-            font-weight: 800;
-            border: 1px solid var(--dourado);
-            letter-spacing: 0.5px;
-        }
-        .selo-orgulho {
-            background: #f7f1e8;
-            border-radius: 60px;
-            padding: 0.2rem 1.4rem 0.2rem 0.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--azul-super);
-            border: 1px solid var(--dourado);
-            margin-top: 0.6rem;
-        }
-        .selo-orgulho i { color: var(--dourado-escuro); }
-
-        /* FRASES EMOCIONAIS */
-        .frases-emocionais {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem 2rem;
-            background: var(--azul-super);
-            border-radius: 80px;
-            padding: 0.8rem 2.2rem;
-            margin: 2rem 0 2.8rem;
-            border: 2px solid var(--dourado);
-        }
-        .frases-emocionais span {
-            font-weight: 700;
-            color: var(--dourado);
-            font-size: 0.95rem;
-        }
-        .frases-emocionais i {
-            color: var(--dourado);
-            margin-right: 8px;
-        }
-
-        /* AVALIAÇÕES */
-        .avaliacoes-section {
-            background: #ffffff;
-            border-radius: 48px;
-            padding: 2.5rem;
-            margin: 2.5rem 0;
-            border: 2px solid var(--dourado);
-        }
-        .avaliacoes-section h2 {
-            font-size: 2rem;
-            color: var(--azul-super);
-            text-align: center;
-        }
-        .avaliacoes-section h2 i { color: var(--dourado-escuro); }
-        .avaliacoes-section .sub-avaliacoes {
-            text-align: center;
-            color: #4d6f8a;
-            margin: 0.5rem 0 2rem;
-        }
-        .avaliacoes-section .sub-avaliacoes i { color: var(--dourado-escuro); }
-        .grid-avaliacoes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.8rem;
-        }
-        .avaliacao-card {
-            background: #f8fafc;
-            border-radius: 24px;
             padding: 1.5rem;
-            border: 1px solid #e8edf9;
-            transition: 0.2s;
-        }
-        .avaliacao-card:hover {
-            border-color: var(--dourado);
-            background: #ffffff;
-        }
-        .avaliacao-card .foto-produto-avaliacao {
-            width: 100%;
-            height: 140px;
-            background: linear-gradient(145deg, #e8edf9, #d5dff0);
-            border-radius: 16px;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--azul-super);
-        }
-        .avaliacao-card .estrelas {
-            color: var(--dourado-escuro);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 2px;
-        }
-        .avaliacao-card .texto-avaliacao {
-            font-size: 0.95rem;
-            color: #14212b;
-            line-height: 1.6;
-            margin-bottom: 0.8rem;
-            font-style: italic;
-        }
-        .avaliacao-card .cliente {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .avaliacao-card .cliente .avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--azul-super);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--dourado);
-            font-size: 1.1rem;
-        }
-        .avaliacao-card .cliente .info .nome {
-            font-weight: 700;
-            color: var(--azul-super);
-            font-size: 0.9rem;
-        }
-        .avaliacao-card .cliente .info .data {
-            font-size: 0.7rem;
-            color: #6b8ba3;
+            background-image: url('https://images.unsplash.com/photo-1609220136736-7b1e3e0b6c3e?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
         }
 
-        /* FOOTER */
-        .footer-profissional {
-            margin-top: 4rem;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--azul-super);
-            border-top: 3px solid var(--dourado);
-            padding-top: 2.2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .footer-profissional i { color: var(--dourado-escuro); }
-        .footer-profissional .marca-rodape {
-            font-weight: 900;
-            color: var(--azul-super);
-        }
-        .footer-profissional .marca-rodape span {
-            color: var(--vermelho);
-        }
-
-        /* WHATSAPP FIXO */
-        .whatsapp-fixo {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
-            transition: 0.2s;
-            z-index: 1000;
-            text-decoration: none;
-        }
-        .whatsapp-fixo:hover {
-            transform: scale(1.08);
-        }
-
-        /* MODAL CHECKOUT */
-        .modal-overlay {
-            display: none;
+        body::before {
+            content: "";
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(6px);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
+            background: rgba(10, 22, 40, 0.82);
+            z-index: 0;
         }
-        .modal-overlay.ativo {
-            display: flex;
-        }
-        .modal-checkout {
-            background: #ffffff;
-            border-radius: 48px;
-            max-width: 560px;
+
+        /* EFEITO DE ESTRELAS (tema herói) */
+        body::after {
+            content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧";
+            position: fixed;
+            bottom: 20px;
+            left: 0;
             width: 100%;
-            padding: 2.5rem;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-            animation: modalEntrar 0.3s ease;
-            border: 2px solid var(--dourado);
+            text-align: center;
+            color: rgba(245, 200, 66, 0.08);
+            font-size: 1.2rem;
+            letter-spacing: 20px;
+            z-index: 0;
+            pointer-events: none;
         }
-        @keyframes modalEntrar {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+
+        .checkout-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            width: 100%;
         }
-        .modal-checkout .fechar-modal {
-            float: right;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #6b8ba3;
-            cursor: pointer;
-        }
-        .modal-checkout .fechar-modal:hover {
-            color: var(--azul-super);
-            transform: rotate(90deg);
-        }
-        .modal-checkout h2 {
-            font-size: 1.8rem;
-            color: var(--azul-super);
-        }
-        .modal-checkout h2 i { color: var(--dourado-escuro); }
-        .modal-checkout .resumo-pedido {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 1.2rem;
-            margin: 1rem 0 1.5rem;
-            border: 1px solid #e8edf9;
-        }
-        .modal-checkout .resumo-pedido .linha {
+
+        /* ============ HEADER ============ */
+        .checkout-header {
             display: flex;
             justify-content: space-between;
-            padding: 0.3rem 0;
-            font-size: 0.95rem;
+            align-items: center;
+            padding: 1rem 0 1.5rem;
+            border-bottom: 2px solid rgba(230, 36, 41, 0.3);
+            margin-bottom: 2rem;
         }
-        .modal-checkout .resumo-pedido .total {
-            border-top: 2px solid var(--dourado);
-            padding-top: 0.6rem;
-            margin-top: 0.4rem;
-            font-weight: 700;
+
+        .checkout-header .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 2px 20px rgba(230, 36, 41, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .checkout-header .logo .shield {
+            display: inline-block;
+            background: linear-gradient(145deg, #e62429, #c41e24);
+            width: 42px;
+            height: 48px;
+            border-radius: 6px 6px 12px 12px;
+            position: relative;
+            text-align: center;
+            line-height: 48px;
             font-size: 1.2rem;
-            color: var(--azul-super);
+            font-weight: 900;
+            color: #f5c842;
+            box-shadow: 0 4px 20px rgba(230, 36, 41, 0.4);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
-        .modal-checkout .form-group {
-            margin-bottom: 1.2rem;
+
+        .checkout-header .logo span {
+            color: #f5c842;
         }
-        .modal-checkout .form-group label {
-            display: block;
+
+        .checkout-header .secure-badge {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .checkout-header .secure-badge i {
+            color: #25d366;
+            margin-right: 6px;
+        }
+
+        /* ============ PROGRESS BAR ============ */
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 2.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .progress-steps .step {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            transition: 0.3s;
+            cursor: default;
+        }
+
+        .progress-steps .step.active {
+            color: #ffffff;
+            background: rgba(230, 36, 41, 0.2);
+        }
+
+        .progress-steps .step .num {
+            background: rgba(255, 255, 255, 0.06);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
             font-weight: 700;
-            color: var(--azul-super);
-            margin-bottom: 0.3rem;
-            font-size: 0.85rem;
         }
-        .modal-checkout .form-group input,
-        .modal-checkout .form-group select {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 16px;
-            border: 2px solid #dce6ef;
-            font-family: 'Inter', sans-serif;
+
+        .progress-steps .step.active .num {
+            background: #e62429;
+            color: #ffffff;
+        }
+
+        .progress-steps .step .arrow {
+            margin-left: 0.5rem;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ============ MAIN GRID ============ */
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2rem;
+        }
+
+        /* ============ COLUNA ESQUERDA - PRODUTO ============ */
+        .product-column {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            align-self: start;
+        }
+
+        .product-column .product-badge {
+            display: inline-block;
+            background: linear-gradient(145deg, #f5c842, #e6b832);
+            color: #0a1628;
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-column .product-badge i {
+            margin-right: 6px;
+        }
+
+        .product-column h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .product-column h1 span {
+            color: #f5c842;
+        }
+
+        .product-column .subtitle {
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.95rem;
-            background: #f8fafc;
-            transition: 0.15s;
+            margin: 0.4rem 0 1rem;
         }
-        .modal-checkout .form-group input:focus,
-        .modal-checkout .form-group select:focus {
-            outline: none;
-            border-color: var(--azul-super);
-            background: #ffffff;
-        }
-        .modal-checkout .metodos-pagamento {
+
+        /* GALERIA DE FOTOS DO PRODUTO */
+        .product-gallery {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 0.8rem;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
         }
-        .modal-checkout .metodos-pagamento button {
+
+        .product-gallery .gallery-item {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.04);
+            transition: 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .product-gallery .gallery-item:hover {
+            border-color: #f5c842;
+            transform: scale(1.02);
+        }
+
+        .product-gallery .gallery-item.main {
+            grid-column: 1 / -1;
+            height: 220px;
+            font-size: 5rem;
+            background: linear-gradient(145deg, rgba(230, 36, 41, 0.15), rgba(10, 22, 40, 0.3));
+            border-color: rgba(230, 36, 41, 0.2);
+        }
+
+        .product-gallery .gallery-item.main i {
+            color: #f5c842;
+            text-shadow: 0 0 40px rgba(245, 200, 66, 0.2);
+        }
+
+        .product-gallery .gallery-item i {
+            font-size: inherit;
+        }
+
+        /* PREÇO E OPÇÕES */
+        .price-block {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-top: 2px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .price-block .current-price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #f5c842;
+        }
+
+        .price-block .old-price {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.3);
+            text-decoration: line-through;
+        }
+
+        .price-block .discount-badge {
+            background: #e62429;
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+        }
+
+        /* OPÇÕES DE PERSONALIZAÇÃO */
+        .customization-options {
+            margin: 1.2rem 0;
+        }
+
+        .customization-options label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .customization-options .option-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .customization-options .option-group button {
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .customization-options .option-group button:hover {
+            border-color: #f5c842;
+            color: #ffffff;
+        }
+
+        .customization-options .option-group button.active {
+            border-color: #f5c842;
+            background: rgba(245, 200, 66, 0.15);
+            color: #f5c842;
+        }
+
+        /* ============ UPSELL / CROSS-SELL ============ */
+        .upsell-box {
+            background: linear-gradient(145deg, rgba(245, 200, 66, 0.08), rgba(230, 36, 41, 0.05));
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border: 2px solid rgba(245, 200, 66, 0.2);
+            position: relative;
+        }
+
+        .upsell-box .upsell-tag {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: linear-gradient(145deg, #f5c842, #e6b832);
+            color: #0a1628;
+            font-weight: 800;
+            font-size: 0.65rem;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .upsell-box .upsell-tag i {
+            margin-right: 4px;
+        }
+
+        .upsell-box .upsell-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .upsell-box .upsell-content .upsell-items {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .upsell-box .upsell-content .upsell-items span {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .upsell-box .upsell-content .upsell-items span i {
+            color: #f5c842;
+            margin-right: 6px;
+        }
+
+        .upsell-box .upsell-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #f5c842;
+            margin-left: auto;
+        }
+
+        .upsell-box .upsell-price small {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
+            text-decoration: line-through;
+            margin-right: 0.5rem;
+        }
+
+        .upsell-box .btn-add-upsell {
+            background: linear-gradient(145deg, #e62429, #c41e24);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(230, 36, 41, 0.2);
+        }
+
+        .upsell-box .btn-add-upsell:hover {
+            transform: scale(1.04);
+            box-shadow: 0 6px 30px rgba(230, 36, 41, 0.35);
+        }
+
+        .upsell-box .btn-add-upsell.added {
+            background: #25d366;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        /* ============ PROVA SOCIAL ============ */
+        .social-proof {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin: 1.2rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .social-proof .item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .social-proof .item i {
+            color: #f5c842;
+            font-size: 1rem;
+        }
+
+        .social-proof .item .highlight {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* ============ TIMER DE URGÊNCIA ============ */
+        .urgency-timer {
+            background: rgba(230, 36, 41, 0.15);
+            border: 1px solid rgba(230, 36, 41, 0.2);
+            color: #ffffff;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin: 0.8rem 0;
+        }
+
+        .urgency-timer i {
+            color: #e62429;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .urgency-timer .timer-numbers {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-family: 'Inter', monospace;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #f5c842;
+        }
+
+        /* ============ BOTÃO PRINCIPAL ============ */
+        .btn-checkout-primary {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(145deg, #e62429, #c41e24);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 8px 30px rgba(230, 36, 41, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .btn-checkout-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(230, 36, 41, 0.5);
+        }
+
+        .btn-checkout-primary i {
+            font-size: 1.4rem;
+        }
+
+        /* ============ SELOS DE SEGURANÇA ============ */
+        .security-seals {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .security-seals .seal {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .security-seals .seal i {
+            font-size: 1.2rem;
+            color: #f5c842;
+        }
+
+        /* ============ GARANTIA ESTENDIDA ============ */
+        .guarantee-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px dashed rgba(245, 200, 66, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .guarantee-box i {
+            font-size: 2rem;
+            color: #f5c842;
+        }
+
+        .guarantee-box .text {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .guarantee-box .text strong {
+            color: #f5c842;
+        }
+
+        /* ============ COLUNA DIREITA - FORMULÁRIO ============ */
+        .form-column {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-column h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+        }
+
+        .form-column .form-sub {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.3rem;
+        }
+
+        .form-group label .required {
+            color: #e62429;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff;
+            transition: 0.2s;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #f5c842;
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 4px rgba(245, 200, 66, 0.05);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* MÉTODOS DE PAGAMENTO */
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.6rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+
+        .payment-methods .pm-btn {
             padding: 0.8rem;
             border-radius: 16px;
-            border: 2px solid #dce6ef;
-            background: #f8fafc;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.03);
             cursor: pointer;
-            font-weight: 700;
-            color: var(--azul-super);
-            transition: 0.15s;
-            font-size: 0.85rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            transition: 0.2s;
+            text-align: center;
         }
-        .modal-checkout .metodos-pagamento button:hover {
-            border-color: var(--azul-super);
-            background: #eef2fa;
+
+        .payment-methods .pm-btn:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
         }
-        .modal-checkout .metodos-pagamento button.selecionado {
-            border-color: var(--azul-super);
-            background: var(--azul-super);
-            color: white;
+
+        .payment-methods .pm-btn.active {
+            border-color: #f5c842;
+            background: rgba(245, 200, 66, 0.08);
+            color: #f5c842;
         }
-        .modal-checkout .btn-finalizar {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 60px;
-            border: none;
-            background: var(--vermelho);
-            color: white;
-            font-weight: 800;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.15s;
-            margin-top: 1rem;
-            border: 2px solid var(--dourado);
-            box-shadow: 0 6px 20px rgba(230, 36, 41, 0.3);
+
+        .payment-methods .pm-btn i {
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 4px;
         }
-        .modal-checkout .btn-finalizar:hover {
-            background: #c41e24;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(230, 36, 41, 0.4);
-        }
-        .modal-checkout .btn-pagar {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 60px;
-            border: none;
-            background: var(--azul-super);
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.15s;
-            margin-top: 0.5rem;
-            border: 2px solid var(--dourado);
-        }
-        .modal-checkout .btn-pagar:hover {
-            background: #13225e;
-            transform: translateY(-2px);
-        }
-        .modal-checkout .campo-cartao {
+
+        /* CARTÃO - CAMPOS */
+        .card-fields {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             gap: 0.6rem;
         }
-        .toast {
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--azul-super);
-            color: var(--dourado);
-            padding: 0.8rem 2rem;
+
+        .btn-finalizar {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(145deg, #f5c842, #e6b832);
+            color: #0a1628;
+            border: none;
             border-radius: 60px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-            opacity: 0;
-            transition: 0.3s;
-            pointer-events: none;
-            border: 2px solid var(--dourado);
-        }
-        .toast.show {
-            opacity: 1;
-            bottom: 120px;
-        }
-        .spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 0.5rem;
+            box-shadow: 0 8px 30px rgba(245, 200, 66, 0.15);
         }
 
-        @media (max-width: 650px) {
-            body { padding: 1rem; }
-            .hero { padding: 1.5rem; }
-            .hero h1 { font-size: 2.2rem; }
-            .header-tag { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-            .card { padding: 1.2rem; }
-            .modal-checkout { padding: 1.5rem; }
-            .metodos-pagamento { grid-template-columns: 1fr; }
-            .whatsapp-fixo { width: 60px; height: 60px; font-size: 1.8rem; bottom: 20px; right: 20px; }
-            .campo-cartao { grid-template-columns: 1fr 1fr; }
-            .marca { font-size: 1.2rem; }
-            .marca .escudo { width: 42px; height: 42px; font-size: 1rem; }
-            .frases-emocionais { padding: 0.6rem 1.2rem; gap: 0.4rem 1rem; }
-            .frases-emocionais span { font-size: 0.75rem; }
+        .btn-finalizar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(245, 200, 66, 0.25);
+        }
+
+        /* ============ DEPOIMENTOS EM VÍDEO (SIMULADOS) ============ */
+        .testimonials-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .testimonials-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials-section h3 i {
+            color: #f5c842;
+            margin-right: 8px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(245, 200, 66, 0.1);
+        }
+
+        .testimonial-card .video-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(230, 36, 41, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem;
+            font-size: 1.4rem;
+            color: #e62429;
+            border: 2px solid rgba(230, 36, 41, 0.2);
+        }
+
+        .testimonial-card .name {
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+
+        .testimonial-card .stars {
+            color: #f5c842;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin: 0.2rem 0;
+        }
+
+        .testimonial-card .comment {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+
+        /* ============ NOTIFICAÇÃO DE COMPRA AO VIVO ============ */
+        .live-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(10, 22, 40, 0.92);
+            backdrop-filter: blur(20px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            z-index: 100;
+            animation: slideUp 0.5s ease;
+            max-width: 350px;
+        }
+
+        .live-notification .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e62429, #c41e24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .live-notification .text .name {
+            font-weight: 700;
+            color: #f5c842;
+        }
+
+        .live-notification .text .time {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .live-notification .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background: #25d366;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.6);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ============ WHATSAPP FIXO ============ */
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            transition: 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .whatsapp-fixo:hover {
+            transform: scale(1.1);
+        }
+
+        /* ============ RESPONSIVO ============ */
+        @media (max-width: 900px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-column .product-gallery .gallery-item.main {
+                height: 180px;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .card-fields {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .live-notification {
+                left: 20px;
+                right: 20px;
+                bottom: 90px;
+                max-width: none;
+            }
+
+            .upsell-box .upsell-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .upsell-box .upsell-price {
+                margin-left: 0;
+            }
+
+            .progress-steps {
+                padding: 0.4rem 0.8rem;
+                gap: 0;
+            }
+
+            .progress-steps .step {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .progress-steps .step .arrow {
+                display: none;
+            }
+
+            .checkout-header {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: flex-start;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .card-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .product-column h1 {
+                font-size: 1.6rem;
+            }
+
+            .price-block .current-price {
+                font-size: 2rem;
+            }
+
+            .product-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .product-gallery .gallery-item.main {
+                grid-column: 1 / -1;
+                height: 160px;
+            }
+
+            .checkout-header .logo {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
 
-        <!-- HEADER -->
-        <div class="header-tag">
-            <div class="marca">
-                <div class="escudo"><span>PAI</span></div>
-                <span class="heroi-texto">HERÓI <span>SEM</span> CAPA</span>
+    <div class="checkout-wrapper">
+
+        <!-- ============ HEADER ============ -->
+        <header class="checkout-header">
+            <div class="logo">
+                <div class="shield">S</div>
+                <span>MEU PAI</span> HERÓI
             </div>
-            <div class="frase-emoção"><i class="fas fa-quote-left"></i> TODO PAI É UM HERÓI SEM CAPA</div>
+            <div class="secure-badge">
+                <i class="fas fa-lock"></i> Compra 100% Segura
+            </div>
+        </header>
+
+        <!-- ============ PROGRESSO ============ -->
+        <div class="progress-steps">
+            <div class="step active">
+                <span class="num">1</span> Produto
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="step">
+                <span class="num">2</span> Dados
+                <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+            </div>
+            <div class="step">
+                <span class="num">3</span> Pagamento
+            </div>
         </div>
 
-        <!-- HERO -->
-        <div class="hero">
-            <div>
-                <h1>PRESENTE <span class="destaque-vermelho">PERSONALIZADO</span><br> PARA O <span class="destaque-dourado">HERÓI</span> DA SUA VIDA</h1>
-                <div class="subtitulo"><i class="fas fa-camera"></i> CAMISETAS · MOLETONS · CANECAS · COM FOTO</div>
-                <a href="https://wa.me/5511934089837?text=Olá!%20Quero%20um%20presente%20personalizado%20para%20meu%20herói%20(pai)." target="_blank" class="cta-principal"><i class="fas fa-bolt"></i> COMPRAR PELO WHATSAPP</a>
-            </div>
-            <div class="selo-heroi">
-                <i class="fas fa-star"></i> EDIÇÃO LIMITADA · DIA DOS PAIS
-            </div>
-        </div>
-
-        <!-- PRODUTOS -->
-        <div class="grid-produtos">
-
-            <!-- CAMISETA -->
-            <div class="card">
-                <div class="badge-destaque">+ VENDIDO</div>
-                <div class="imagem-produto"><i class="fas fa-tshirt"></i></div>
-                <h3>CAMISETA</h3>
-                <div class="descricao-curta">ALGODÃO PREMIUM · 100%</div>
-                <div class="tamanhos">
-                    <button class="ativo" data-produto="camiseta" data-tamanho="P" onclick="selecionarTamanho(this, 'camiseta', 'P')">P</button>
-                    <button data-produto="camiseta" data-tamanho="M" onclick="selecionarTamanho(this, 'camiseta', 'M')">M</button>
-                    <button data-produto="camiseta" data-tamanho="G" onclick="selecionarTamanho(this, 'camiseta', 'G')">G</button>
-                    <button data-produto="camiseta" data-tamanho="GG" onclick="selecionarTamanho(this, 'camiseta', 'GG')">GG</button>
-                    <button data-produto="camiseta" data-tamanho="XG" onclick="selecionarTamanho(this, 'camiseta', 'XG')">XG</button>
-                </div>
-                <div class="personalizacao"><i class="fas fa-image"></i> PERSONALIZE COM FOTO</div>
-                <div class="preco" id="preco-camiseta">R$ 89,90 <small>ATÉ 3 FOTOS</small></div>
-                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <button onclick="abrirCheckout('Camiseta Premium', 89.90, 'P', 'camiseta')" class="btn-comprar">COMPRAR</button>
-                    <span class="selo-orgulho"><i class="fas fa-star"></i> EDIÇÃO HERÓI</span>
-                </div>
-            </div>
-
-            <!-- MOLETOM -->
-            <div class="card">
-                <div class="badge-destaque">PREMIUM</div>
-                <div class="imagem-produto"><i class="fas fa-user"></i></div>
-                <h3>MOLETOM CANGURU</h3>
-                <div class="descricao-curta">PREMIUM · TECIDO MACIO</div>
-                <div class="tamanhos">
-                    <button class="ativo" data-produto="moletom" data-tamanho="P" onclick="selecionarTamanho(this, 'moletom', 'P')">P</button>
-                    <button data-produto="moletom" data-tamanho="M" onclick="selecionarTamanho(this, 'moletom', 'M')">M</button>
-                    <button data-produto="moletom" data-tamanho="G" onclick="selecionarTamanho(this, 'moletom', 'G')">G</button>
-                    <button data-produto="moletom" data-tamanho="GG" onclick="selecionarTamanho(this, 'moletom', 'GG')">GG</button>
-                    <button data-produto="moletom" data-tamanho="XG" onclick="selecionarTamanho(this, 'moletom', 'XG')">XG</button>
-                    <button data-produto="moletom" data-tamanho="XXG" onclick="selecionarTamanho(this, 'moletom', 'XXG')">XXG</button>
-                </div>
-                <div class="personalizacao"><i class="fas fa-image"></i> FOTO + NOME BORDADO</div>
-                <div class="preco" id="preco-moletom">R$ 169,90 <small>PERSONALIZAÇÃO</small></div>
-                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <button onclick="abrirCheckout('Moletom Canguru Premium', 169.90, 'P', 'moletom')" class="btn-comprar">COMPRAR</button>
-                    <span class="selo-orgulho"><i class="fas fa-crown"></i> EDIÇÃO OURO</span>
-                </div>
-            </div>
-
-            <!-- CANECA PORCELANA -->
-            <div class="card">
-                <div class="badge-destaque
+        <!-- ============ GRID PRINCIPAL ============
