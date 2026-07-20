@@ -16,7 +16,6 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: #f4f7fc;
             color: #14212b;
             line-height: 1.5;
             padding: 1.5rem;
@@ -24,75 +23,113 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            /* ⭐ NOVO: IMAGEM DE FUNDO - FAMÍLIA FELIZ ⭐ */
+            background-image: url('https://images.unsplash.com/photo-1609220136736-7b1e3e0b6c3e?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
         }
+
+        /* ⭐ NOVO: OVERLAY ESCURO PARA LEGIBILIDADE ⭐ */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 20, 40, 0.45);
+            z-index: 0;
+            backdrop-filter: blur(2px);
+        }
+
+        /* TODOS OS ELEMENTOS FICAM POR CIMA DO OVERLAY */
+        .container,
+        .whatsapp-fixo,
+        .modal-overlay,
+        .toast {
+            position: relative;
+            z-index: 1;
+        }
+
         .container {
             max-width: 1280px;
             width: 100%;
             margin: 0 auto;
         }
 
-        /* HEADER */
+        /* HEADER - FUNDO TRANSLÚCIDO */
         .header-tag {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #dce6ef;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
             padding-bottom: 1.5rem;
             margin-bottom: 2.5rem;
         }
         .header-tag .marca {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #003153;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
         .header-tag .marca i {
-            color: #b68b5c;
+            color: #f5d6a8;
             margin-right: 10px;
         }
         .header-tag .frase-emoção {
-            background: #eef3f9;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
             padding: 0.5rem 2rem;
             border-radius: 60px;
             font-weight: 600;
-            color: #003153;
+            color: #ffffff;
             font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
         }
         .header-tag .frase-emoção i {
-            color: #b68b5c;
+            color: #f5d6a8;
             margin-right: 10px;
         }
 
-        /* HERO */
+        /* HERO - FUNDO TRANSLÚCIDO */
         .hero {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: flex-end;
             margin-bottom: 3.5rem;
-            background: linear-gradient(145deg, #ffffff, #f2f8fe);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
             padding: 2rem 2.5rem;
             border-radius: 48px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         .hero h1 {
             font-size: 3.2rem;
             font-weight: 800;
-            color: #003153;
+            color: #ffffff;
             line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         .hero h1 span {
-            color: #b68b5c;
+            color: #f5d6a8;
         }
         .hero .subtitulo {
             font-size: 1.2rem;
-            color: #28526b;
+            color: #ffffff;
             margin-top: 0.5rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
             padding: 0.4rem 1.8rem;
             border-radius: 60px;
             display: inline-block;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
         }
         .hero .cta-principal {
             background: #25D366;
@@ -107,13 +144,23 @@
             text-decoration: none;
             margin-top: 0.8rem;
             transition: 0.15s;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
         }
         .hero .cta-principal:hover {
             background: #20b85a;
             transform: translateY(-2px);
         }
+        .hero div:last-child {
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
 
-        /* GRID DE PRODUTOS */
+        /* GRID DE PRODUTOS - CARDS COM FUNDO BRANCO/TRANSLÚCIDO */
         .grid-produtos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,11 +168,12 @@
             margin: 2rem 0 3.5rem;
         }
         .card {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
             border-radius: 40px;
             padding: 1.8rem;
-            box-shadow: 0 10px 28px -8px rgba(0, 20, 40, 0.06);
-            border: 1px solid #eef4fa;
+            box-shadow: 0 10px 28px -8px rgba(0, 20, 40, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             display: flex;
             flex-direction: column;
             position: relative;
@@ -133,7 +181,8 @@
         }
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 24px 44px -14px rgba(0, 30, 60, 0.12);
+            box-shadow: 0 24px 44px -14px rgba(0, 30, 60, 0.25);
+            background: rgba(255, 255, 255, 0.97);
         }
         .card .imagem-produto {
             width: 100%;
@@ -263,35 +312,38 @@
             color: #b68b5c;
         }
 
-        /* FRASES EMOCIONAIS */
+        /* FRASES EMOCIONAIS - FUNDO TRANSLÚCIDO */
         .frases-emocionais {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem 2rem;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
             border-radius: 80px;
             padding: 0.8rem 2.2rem;
             margin: 2rem 0 2.8rem;
-            border: 1px solid #e6edf5;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .frases-emocionais span {
             font-weight: 600;
-            color: #003153;
+            color: #ffffff;
             font-size: 0.95rem;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
         }
         .frases-emocionais i {
-            color: #b68b5c;
+            color: #f5d6a8;
             margin-right: 8px;
         }
 
         /* AVALIAÇÕES */
         .avaliacoes-section {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
             border-radius: 48px;
             padding: 2.5rem;
             margin: 2.5rem 0;
-            border: 1px solid #e6edf5;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
         .avaliacoes-section h2 {
             font-size: 2rem;
@@ -378,20 +430,21 @@
             margin-top: 4rem;
             text-align: center;
             font-size: 0.85rem;
-            color: #3e5f78;
-            border-top: 1px solid #dce6ef;
+            color: rgba(255, 255, 255, 0.85);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 2.2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
         }
         .footer-profissional i {
-            color: #b68b5c;
+            color: #f5d6a8;
         }
         .footer-profissional .marca-rodape {
             font-weight: 700;
-            color: #003153;
+            color: #ffffff;
         }
 
         /* WHATSAPP FIXO */
@@ -417,7 +470,7 @@
             transform: scale(1.08);
         }
 
-        /* MODAL CHECKOUT */
+        /* MODAL CHECKOUT - FUNDO BRANCO */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -425,8 +478,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
             z-index: 9999;
             align-items: center;
             justify-content: center;
@@ -443,7 +496,7 @@
             padding: 2.5rem;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
             animation: modalEntrar 0.3s ease;
         }
         @keyframes modalEntrar {
@@ -653,6 +706,14 @@
             .campo-cartao {
                 grid-template-columns: 1fr 1fr;
             }
+            .frases-emocionais {
+                padding: 0.8rem 1.2rem;
+                border-radius: 40px;
+                gap: 0.5rem 1.2rem;
+            }
+            .frases-emocionais span {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -672,8 +733,8 @@
                 <div class="subtitulo"><i class="fas fa-camera"></i> CAMISETAS · MOLETONS · CANECAS · COM FOTO</div>
                 <a href="https://wa.me/5511934089837?text=Olá!%20Gostaria%20de%20comprar%20um%20presente%20personalizado%20para%20o%20Dia%20dos%20Pais." target="_blank" class="cta-principal">COMPRAR PELO WHATSAPP</a>
             </div>
-            <div style="margin-top: 0.8rem; font-weight: 500; color: #003153; background: rgba(255,255,255,0.4); padding: 0.4rem 1.8rem; border-radius: 60px; border: 1px solid rgba(255,255,255,0.5);">
-                <i class="fas fa-heart" style="color: #b68b5c;"></i> EDIÇÃO EXCLUSIVA
+            <div style="margin-top: 0.8rem; font-weight: 500; color: #ffffff; background: rgba(0,0,0,0.15); backdrop-filter: blur(4px); padding: 0.4rem 1.8rem; border-radius: 60px; border: 1px solid rgba(255,255,255,0.15);">
+                <i class="fas fa-heart" style="color: #f5d6a8;"></i> EDIÇÃO EXCLUSIVA
             </div>
         </div>
 
@@ -744,40 +805,4 @@
 
             <!-- CANECA TERMO -->
             <div class="card">
-                <div class="badge-destaque">TERMO</div>
-                <div class="imagem-produto"><i class="fas fa-mug-hot"></i></div>
-                <h3>CANECA TERMO</h3>
-                <div class="descricao-curta">AÇO INOX · ISOLAMENTO TÉRMICO</div>
-                <div class="tamanhos">
-                    <button class="ativo" data-produto="caneca2" data-tamanho="350ml" onclick="selecionarTamanhoCaneca2(this, '350ml', 69.90)">350ML - R$ 69,90</button>
-                    <button data-produto="caneca2" data-tamanho="500ml" onclick="selecionarTamanhoCaneca2(this, '500ml', 79.90)">500ML - R$ 79,90</button>
-                    <button data-produto="caneca2" data-tamanho="700ml" onclick="selecionarTamanhoCaneca2(this, '700ml', 89.90)">700ML - R$ 89,90</button>
-                </div>
-                <div class="personalizacao"><i class="fas fa-image"></i> FOTO + TEXTO</div>
-                <div class="preco" id="preco-caneca2">R$ 69,90 <small>PERSONALIZAÇÃO</small></div>
-                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <button onclick="abrirCheckout('Caneca Termo', 69.90, '350ml', 'caneca2')" class="btn-comprar">COMPRAR</button>
-                    <span class="selo-orgulho"><i class="fas fa-font"></i> TEXTO EXCLUSIVO</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- FRASES EMOCIONAIS -->
-        <div class="frases-emocionais">
-            <span><i class="fas fa-heart"></i> MEU PAI, MEU ORGULHO</span>
-            <span><i class="fas fa-star"></i> HOMEM DE VALOR</span>
-            <span><i class="fas fa-gem"></i> HERANÇA DE AMOR</span>
-            <span><i class="fas fa-shield"></i> MEU GUARDIÃO</span>
-            <span><i class="fas fa-hands"></i> EXEMPLO DE VIDA</span>
-            <span><i class="fas fa-crown"></i> MEU REI</span>
-            <span><i class="fas fa-anchor"></i> MEU PORTO SEGURO</span>
-        </div>
-
-        <!-- AVALIAÇÕES -->
-        <div class="avaliacoes-section">
-            <h2><i class="fas fa-star" style="color: #f5b342;"></i> O QUE NOSSOS CLIENTES DIZEM</h2>
-            <p class="sub-avaliacoes"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> 4.9 de 5 · Mais de 280 avaliações</p>
-            <div class="grid-avaliacoes">
-                <div class="avaliacao-card">
-                    <div class="foto-produto-avaliacao"><i class="fas fa-tshirt"></i></div>
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                <div class="
